@@ -16,8 +16,6 @@ class App extends Component {
     const movies = await API.getFilms()
     this.setState({
       movies
-    }, () => {
-      console.log(this.state)
     })
   }
 
