@@ -6,7 +6,8 @@ class SignUp extends Component {
     this.state = {
       name: '', 
       email: '', 
-      password: ''
+      password: '',
+      showSignIn: false
     }
   }
 
@@ -27,10 +28,12 @@ class SignUp extends Component {
   }
 
   render() {
-    const {name, email, password} = this.state
+    const {name, email, password, showSignIn} = this.state
     return (
       <form onSubmit={ this.handleSubmit }>
-        <input name="name" value={name} onChange={ this.handleChange } />
+      {
+        !showSignIn ? <input name="name" value={name} onChange={ this.handleChange } /> : ''
+      }
         <input name="email" value={email} onChange={ this.handleChange } />
         <input name="password" value={password} onChange={ this.handleChange } />
         <button className='submit-sign-up'>SUBMIT</button>
