@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 
-export default const Header = () =>  {
+export const Header = () =>  {
     return (
       <header>
         <h1>Action Flix</h1>
