@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import * as API from '../../apiCalls/apiCalls.js'
 import './App.css';
-import { MovieContainer } from '../MovieContainer'
-import { Header } from '../Header'; 
+import { MovieContainer } from '../MovieContainer/MovieContainer'
+import { Header } from '../Header/Header'; 
 
 class App extends Component {
   constructor() {
