@@ -2,23 +2,16 @@ import React, { Component } from 'react';
 import * as API from '../../apiCalls/apiCalls.js'
 import './App.css';
 import { Route } from 'react-router-dom'
-import { MovieContainer } from '../MovieContainer/MovieContainer'
+import  MovieContainer  from '../MovieContainer/MovieContainer'
 import { Header } from '../Header/Header'; 
+
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: [],
       loginSelected: false
     }
-  }
-
-  async componentDidMount() {
-    const movies = await API.getFilms()
-    this.setState({
-      movies
-    })
   }
 
   render() {
@@ -30,5 +23,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

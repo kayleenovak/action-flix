@@ -1,9 +1,11 @@
+import { combineReducers } from 'redux'
 import { isLoadingReducer } from './isLoadingReducer.js'
 import { hasErroredReducer } from './hasErroredReducer.js'
-import { fetchDataSuccessReducer } from '.fetchDataSuccessReducer.js'
+import { moviesReducer } from './moviesReducer.js'
+
 
 export const rootReducer = combineReducers({
   isLoading: isLoadingReducer, 
   hasErrored: hasErroredReducer, 
-  fetchDataSuccess: fetchDataSuccessReducer
+  movies: moviesReducer
 })

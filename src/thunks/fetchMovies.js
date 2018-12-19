@@ -1,18 +1,20 @@
-import { isLoading, hasErrored, fetchDataSuccess } from './actions/index.js'
+import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
+import { cleanMovies } from '../apiCalls/apiCalls.js'
 
 export const fetchMovies = (url) => {
   return (dispatch) => {
+    console.log('hi')
     dispatch(isLoading(true))
-    fetch(url)
+     fetch(url)
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
       dispatch(isLoading(false))
-      return response
-    })
+      return response})
     .then(response => response.json())
-    .then(movies => dispatch(fetchDataSuccess(movies)))
+    .then(movies => cleanMovies(movies))
+    .then(cleanMovies => dispatch(fetchDataSuccess(cleanMovies)))
     .catch(() => dispatch(hasErrored))
+    }
   }
-}
