@@ -5,7 +5,7 @@ import  MovieContainer  from '../MovieContainer/MovieContainer'
 import { Header } from '../Header/Header'; 
 
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state = {
