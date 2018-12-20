@@ -3,7 +3,6 @@ import { cleanMovies } from '../cleaners/cleaners.js'
 
 export const fetchMovies = (url) => {
   return (dispatch) => {
-    console.log('hi')
     dispatch(isLoading(true))
      fetch(url)
     .then(response => {
