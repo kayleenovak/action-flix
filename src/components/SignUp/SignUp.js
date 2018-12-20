@@ -10,7 +10,7 @@ export class SignUp extends Component {
       name: '', 
       email: '', 
       password: '',
-      showSignIn: false
+      showSignIn: true
     }
   }
 
@@ -32,8 +32,16 @@ export class SignUp extends Component {
     })
   }
 
+  handleSignUp = (e) => {
+    e.preventDefault()
+    this.setState({showSignIn: !this.state.showSignIn})
+  }
+
   render() {
     const {name, email, password, showSignIn} = this.state
+    const signUpBtnName = showSignIn ? 'Sign In' : 'Sign Up'
+    const newUserBtnName = showSignIn ? 'New user? Sign up!' : 'Log in instead'
+
     if (this.props.user) return <Redirect to='/' />
     return (
       <form onSubmit={ this.handleSubmit }>
@@ -42,7 +50,8 @@ export class SignUp extends Component {
       }
         <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } />
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
-        <button className='submit-sign-up'>SUBMIT</button>
+        <button className='submit-sign-up' onClick={this.handleSubmit}>{signUpBtnName}</button>        
+        <button className='submit-sign-up' onClick={this.handleSignUp}>{newUserBtnName}</button>
         { this.props.hasErrored ? <h3>email and password do not match</h3> : undefined }
       </form> 
     )
