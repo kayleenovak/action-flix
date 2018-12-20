@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { getUser } from '../../thunks/signIn.js'
+import { connect } from 'react-redux'
 
 export class SignUp extends Component {
   constructor() {
@@ -20,6 +22,8 @@ export class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const { email, password } = this.state
+    this.props.checkUserLogin(email, password)
     this.setState({
       name: '',
       email: '',
@@ -32,12 +36,18 @@ export class SignUp extends Component {
     return (
       <form onSubmit={ this.handleSubmit }>
       {
-        !showSignIn ? <input name="name" value={name} onChange={ this.handleChange } /> : ''
+        !showSignIn ? <input name="name" value={name} placeholder='Enter name ...' onChange={ this.handleChange } /> : ''
       }
-        <input name="email" value={email} onChange={ this.handleChange } />
-        <input name="password" value={password} onChange={ this.handleChange } />
+        <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } />
+        <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up'>SUBMIT</button>
       </form> 
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  checkUserLogin: (email, password) => dispatch(getUser(email, password))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp)

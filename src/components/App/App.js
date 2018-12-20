@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SignUp } from '../SignUp/SignUp'
 import './App.css';
 import { Route } from 'react-router-dom'
 import  MovieContainer  from '../MovieContainer/MovieContainer'
@@ -31,6 +32,7 @@ export class App extends Component {
       <div className="App">
         <Header />
         <Route exact path="/" render={() => <MovieContainer movies={this.state.movies}/>}/>
+        <Route exact path='/login' component={ SignUp }/>
       </div>
     );
   }

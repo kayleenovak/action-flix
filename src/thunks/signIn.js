@@ -1,9 +1,15 @@
 import { isLoading, hasErrored, signIn } from '../actions/index.js'
 
-export const signIn = (url) => {
+export const getUser = (email, password) => {
   return (dispatch) => {
     dispatch(isLoading(true))
-    fetch(url)
+    fetch('http://localhost:3000/api/users', {
+      method: 'POST',
+      body: JSON.stringify({email: 'tman2272@aol.com', password: 'password'}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText)
