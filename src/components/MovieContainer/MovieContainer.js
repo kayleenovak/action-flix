@@ -7,7 +7,7 @@ import { fetchMovies } from '../../thunks/fetchMovies.js'
 
 export class MovieContainer extends Component {
 async componentDidMount() {
-  console.log(this.props)
+  console.log(this.props.fetchMovies())
   const url = 'https://api.themoviedb.org/3/discover/movie?api_key=8d54c10134c07bfb8e01ded9e30524be&with_genres=28'
    await this.props.fetchMovies(url)
 }
