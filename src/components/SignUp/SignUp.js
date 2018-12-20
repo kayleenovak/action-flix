@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { getUser } from '../../thunks/signIn.js'
+import { createUser } from '../../thunks/createUser.js'
 import { connect } from 'react-redux'
 
 export class SignUp extends Component {
@@ -23,8 +24,13 @@ export class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { email, password } = this.state
-    this.props.checkUserLogin(email, password)
+    const { name, email, password } = this.state
+    if (this.state.showSignIn) {
+      this.props.checkUserLogin(email, password)      
+    } else {
+      this.props.createNewUser(name, email, password)
+    }
+
     this.setState({
       name: '',
       email: '',
@@ -64,7 +70,9 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  checkUserLogin: (email, password) => dispatch(getUser(email, password))
+  checkUserLogin: (email, password) => dispatch(getUser(email, password)),
+  createNewUser: (name, email, password) => dispatch(createUser(name, email, password))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
+
