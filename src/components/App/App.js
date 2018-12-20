@@ -3,7 +3,7 @@ import SignUp from '../SignUp/SignUp'
 import './App.css';
 import { Route } from 'react-router-dom'
 import  MovieContainer  from '../MovieContainer/MovieContainer'
-import { Header } from '../Header/Header'; 
+import Header from '../Header/Header'; 
 
 
 export class App extends Component {

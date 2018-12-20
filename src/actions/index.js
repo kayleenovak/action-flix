@@ -22,3 +22,7 @@ export const newUser = (id, name, email, password) => ({
   type: 'NEW_USER',
   id
 })
+
+export const logOut = () => ({
+  type: 'LOG_OUT'
+})

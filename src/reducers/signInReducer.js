@@ -4,6 +4,8 @@ export const signInReducer = (state='', action) => {
       return action.id
     case 'NEW_USER':
       return action.id
+    case 'LOG_OUT':
+      return ''
     default: 
       return state
   }
