@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <article
+    className="movie-card"
+  >
+    <img
+      alt="movie poster"
+      className="movie-img"
+      src="movie poster"
+    />
+    <div
+      className="movie-info-text"
+    >
+      <div
+        className="movie-icon-container"
+      >
+        <p
+          className="movie-rating"
+        >
+          9
+        </p>
+        <img
+          alt="full popcorn"
+          src="../images/full-popcorn.svg"
+        />
+      </div>
+      <h3
+        className="movie-title"
+      >
+        Great Movie
+      </h3>
+      <p
+        className="movie-release"
+      >
+        09/12/19
+      </p>
+      <p
+        className="movie-description"
+      >
+        This is a great movie
+      </p>
+    </div>
+  </article>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="movie poster"
+          className="movie-img"
+          src="movie poster"
+        />,
+        <div
+          className="movie-info-text"
+        >
+          <div
+            className="movie-icon-container"
+          >
+            <p
+              className="movie-rating"
+            >
+              9
+            </p>
+            <img
+              alt="full popcorn"
+              src="../images/full-popcorn.svg"
+            />
+          </div>
+          <h3
+            className="movie-title"
+          >
+            Great Movie
+          </h3>
+          <p
+            className="movie-release"
+          >
+            09/12/19
+          </p>
+          <p
+            className="movie-description"
+          >
+            This is a great movie
+          </p>
+        </div>,
+      ],
+      "className": "movie-card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "movie poster",
+          "className": "movie-img",
+          "src": "movie poster",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="movie-icon-container"
+            >
+              <p
+                className="movie-rating"
+              >
+                9
+              </p>
+              <img
+                alt="full popcorn"
+                src="../images/full-popcorn.svg"
+              />
+            </div>,
+            <h3
+              className="movie-title"
+            >
+              Great Movie
+            </h3>,
+            <p
+              className="movie-release"
+            >
+              09/12/19
+            </p>,
+            <p
+              className="movie-description"
+            >
+              This is a great movie
+            </p>,
+          ],
+          "className": "movie-info-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="movie-rating"
+                >
+                  9
+                </p>,
+                <img
+                  alt="full popcorn"
+                  src="../images/full-popcorn.svg"
+                />,
+              ],
+              "className": "movie-icon-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 9,
+                  "className": "movie-rating",
+                },
+                "ref": null,
+                "rendered": 9,
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "full popcorn",
+                  "src": "../images/full-popcorn.svg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Great Movie",
+              "className": "movie-title",
+            },
+            "ref": null,
+            "rendered": "Great Movie",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "09/12/19",
+              "className": "movie-release",
+            },
+            "ref": null,
+            "rendered": "09/12/19",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "This is a great movie",
+              "className": "movie-description",
+            },
+            "ref": null,
+            "rendered": "This is a great movie",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="movie poster"
+            className="movie-img"
+            src="movie poster"
+          />,
+          <div
+            className="movie-info-text"
+          >
+            <div
+              className="movie-icon-container"
+            >
+              <p
+                className="movie-rating"
+              >
+                9
+              </p>
+              <img
+                alt="full popcorn"
+                src="../images/full-popcorn.svg"
+              />
+            </div>
+            <h3
+              className="movie-title"
+            >
+              Great Movie
+            </h3>
+            <p
+              className="movie-release"
+            >
+              09/12/19
+            </p>
+            <p
+              className="movie-description"
+            >
+              This is a great movie
+            </p>
+          </div>,
+        ],
+        "className": "movie-card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "movie poster",
+            "className": "movie-img",
+            "src": "movie poster",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="movie-icon-container"
+              >
+                <p
+                  className="movie-rating"
+                >
+                  9
+                </p>
+                <img
+                  alt="full popcorn"
+                  src="../images/full-popcorn.svg"
+                />
+              </div>,
+              <h3
+                className="movie-title"
+              >
+                Great Movie
+              </h3>,
+              <p
+                className="movie-release"
+              >
+                09/12/19
+              </p>,
+              <p
+                className="movie-description"
+              >
+                This is a great movie
+              </p>,
+            ],
+            "className": "movie-info-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="movie-rating"
+                  >
+                    9
+                  </p>,
+                  <img
+                    alt="full popcorn"
+                    src="../images/full-popcorn.svg"
+                  />,
+                ],
+                "className": "movie-icon-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 9,
+                    "className": "movie-rating",
+                  },
+                  "ref": null,
+                  "rendered": 9,
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "full popcorn",
+                    "src": "../images/full-popcorn.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Great Movie",
+                "className": "movie-title",
+              },
+              "ref": null,
+              "rendered": "Great Movie",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "09/12/19",
+                "className": "movie-release",
+              },
+              "ref": null,
+              "rendered": "09/12/19",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "This is a great movie",
+                "className": "movie-description",
+              },
+              "ref": null,
+              "rendered": "This is a great movie",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

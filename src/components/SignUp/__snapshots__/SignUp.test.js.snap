@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp should match the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <form
+    onSubmit={[MockFunction]}
+  >
+    
+    <input
+      name="email"
+      onChange={[MockFunction]}
+      value="email"
+    />
+    <input
+      name="password"
+      onChange={[MockFunction]}
+      value="password"
+    />
+    <button
+      className="submit-sign-up"
+    >
+      SUBMIT
+    </button>
+  </form>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "",
+        <input
+          name="email"
+          onChange={[MockFunction]}
+          value="email"
+        />,
+        <input
+          name="password"
+          onChange={[MockFunction]}
+          value="password"
+        />,
+        <button
+          className="submit-sign-up"
+        >
+          SUBMIT
+        </button>,
+      ],
+      "onSubmit": [MockFunction],
+    },
+    "ref": null,
+    "rendered": Array [
+      "",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "email",
+          "onChange": [MockFunction],
+          "value": "email",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "password",
+          "onChange": [MockFunction],
+          "value": "password",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "SUBMIT",
+          "className": "submit-sign-up",
+        },
+        "ref": null,
+        "rendered": "SUBMIT",
+        "type": "button",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "",
+          <input
+            name="email"
+            onChange={[MockFunction]}
+            value="email"
+          />,
+          <input
+            name="password"
+            onChange={[MockFunction]}
+            value="password"
+          />,
+          <button
+            className="submit-sign-up"
+          >
+            SUBMIT
+          </button>,
+        ],
+        "onSubmit": [MockFunction],
+      },
+      "ref": null,
+      "rendered": Array [
+        "",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "email",
+            "onChange": [MockFunction],
+            "value": "email",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "password",
+            "onChange": [MockFunction],
+            "value": "password",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "SUBMIT",
+            "className": "submit-sign-up",
+          },
+          "ref": null,
+          "rendered": "SUBMIT",
+          "type": "button",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
