@@ -1,7 +1,7 @@
 import { hasErroredReducer } from './hasErroredREducer'
 import * as actions from '../actions'
 
-describe('hassErroredReducer', () => {
+describe('hasErroredReducer', () => {
   it('should return default state', () => {
     const expected = false 
 
