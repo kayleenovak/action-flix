@@ -58,5 +58,17 @@ describe('MovieContainer', () => {
         expect(result).toEqual(expected)
      })
    })
+ 
+    describe('mapDispatchToProps', () => {
+     it('should call dispatch with the correct params', () => {
+       const mockDispatch = jest.fn()
+       const mappedProps = mapDispatchToProps(mockDispatch)
+       const url = 'www.getthemovies.com'
+ 
+        mappedProps.fetchMovies(url)
+ 
+        expect(mockDispatch).toHaveBeenCalled
+     })
+   })
 
  })
