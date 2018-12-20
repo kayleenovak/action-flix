@@ -1,4 +1,4 @@
-import { hasErroredReducer } from './hasErroredREducer'
+import { hasErroredReducer } from './hasErroredReducer'
 import * as actions from '../actions'
 
 describe('hasErroredReducer', () => {
