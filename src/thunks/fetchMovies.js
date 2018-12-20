@@ -1,5 +1,5 @@
 import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
-import { cleanMovies } from '../apiCalls/apiCalls.js'
+import { cleanMovies } from '../cleaners/cleaners.js'
 
 export const fetchMovies = (url) => {
   return (dispatch) => {
