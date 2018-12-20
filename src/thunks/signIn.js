@@ -5,13 +5,14 @@ export const getUser = (email, password) => {
     dispatch(isLoading(true))
     fetch('http://localhost:3000/api/users', {
       method: 'POST',
-      body: JSON.stringify({email: 'tman2272@aol.com', password: 'password'}),
+      body: JSON.stringify({email: email, password: password}),
       headers: {
         'Content-Type': 'application/json'
       }
     })
     .then(response => {
       if (!response.ok) {
+        dispatch(isLoading(false))
         throw Error(response.statusText)
       }
       dispatch(isLoading(false))
@@ -19,6 +20,6 @@ export const getUser = (email, password) => {
     })
     .then(response => response.json())
     .then(user => dispatch(signIn(user.data.id)))
-    .catch(() => dispatch(hasErrored))
+    .catch(() => dispatch(hasErrored(true)))
   }
 }

@@ -43,13 +43,15 @@ export class SignUp extends Component {
         <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } />
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up'>SUBMIT</button>
+        { this.props.hasErrored ? <h3>email and password do not match</h3> : undefined }
       </form> 
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  user: state.userId
+  user: state.userId,
+  hasErrored: state.hasErrored
 })
 
 const mapDispatchToProps = (dispatch) => ({
