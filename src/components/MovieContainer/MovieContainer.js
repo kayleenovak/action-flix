@@ -28,7 +28,6 @@ render() {
 }
 
 export const mapStateToProps = (state) => {
-  console.log(state) 
   return {
   movies: state.movies,
   isLoading: state.isLoading,
