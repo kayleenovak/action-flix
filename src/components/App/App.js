@@ -13,6 +13,19 @@ export class App extends Component {
     }
   }
 
+  async componentDidMount() {
+    const response = await fetch('http://localhost:3000/api/users', {
+      method: 'POST',
+      body: JSON.stringify({email: 'tman2272@aol.com', password: 'password'}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const userInfo = await response.json()
+    console.log(userInfo)
+
+  }
+
   render() {
     return (
       <div className="App">

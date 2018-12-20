@@ -1,10 +1,9 @@
-import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
-import { cleanMovies } from '../cleaners/cleaners.js'
+import { isLoading, hasErrored, signIn } from '../actions/index.js'
 
-export const fetchMovies = (url) => {
+export const signIn = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true))
-     fetch(url)
+    fetch(url)
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText)
@@ -13,8 +12,7 @@ export const fetchMovies = (url) => {
       return response
     })
     .then(response => response.json())
-    .then(movies => cleanMovies(movies))
-    .then(cleanMovies => dispatch(fetchDataSuccess(cleanMovies)))
+    .then(user => dispatch(signIn(user.data.id)))
     .catch(() => dispatch(hasErrored))
-    }
   }
+}
