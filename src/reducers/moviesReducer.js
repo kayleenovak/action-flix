@@ -1,8 +1,8 @@
-export const moviesReducer = (state=[], action) => {
-  switch(action.type) {
-    case 'FETCH_DATA_SUCCESS': 
+export const moviesReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_DATA_SUCCESS':
       return action.movies
-    default: 
+    default:
       return state
   }
 }
