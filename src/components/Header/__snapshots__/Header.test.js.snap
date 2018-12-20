@@ -3,20 +3,7 @@
 exports[`Header should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <header
-    className="header"
-  >
-    <h1
-      className="header-title"
-    >
-      Action Flix
-    </h1>
-    <button
-      className="login-btn"
-    >
-      Login
-    </button>
-  </header>,
+  Symbol(enzyme.__unrendered__): <Header />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

@@ -3,26 +3,7 @@
 exports[`SignUp should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <form
-    onSubmit={[MockFunction]}
-  >
-    
-    <input
-      name="email"
-      onChange={[MockFunction]}
-      value="email"
-    />
-    <input
-      name="password"
-      onChange={[MockFunction]}
-      value="password"
-    />
-    <button
-      className="submit-sign-up"
-    >
-      SUBMIT
-    </button>
-  </form>,
+  Symbol(enzyme.__unrendered__): <SignUp />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -37,16 +18,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "",
+        <input
+          name="name"
+          onChange={[Function]}
+          value=""
+        />,
         <input
           name="email"
-          onChange={[MockFunction]}
-          value="email"
+          onChange={[Function]}
+          value=""
         />,
         <input
           name="password"
-          onChange={[MockFunction]}
-          value="password"
+          onChange={[Function]}
+          value=""
         />,
         <button
           className="submit-sign-up"
@@ -54,19 +39,31 @@ ShallowWrapper {
           SUBMIT
         </button>,
       ],
-      "onSubmit": [MockFunction],
+      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
-      "",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "name",
+          "onChange": [Function],
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "name": "email",
-          "onChange": [MockFunction],
-          "value": "email",
+          "onChange": [Function],
+          "value": "",
         },
         "ref": null,
         "rendered": null,
@@ -78,8 +75,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "name": "password",
-          "onChange": [MockFunction],
-          "value": "password",
+          "onChange": [Function],
+          "value": "",
         },
         "ref": null,
         "rendered": null,
@@ -107,16 +104,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "",
+          <input
+            name="name"
+            onChange={[Function]}
+            value=""
+          />,
           <input
             name="email"
-            onChange={[MockFunction]}
-            value="email"
+            onChange={[Function]}
+            value=""
           />,
           <input
             name="password"
-            onChange={[MockFunction]}
-            value="password"
+            onChange={[Function]}
+            value=""
           />,
           <button
             className="submit-sign-up"
@@ -124,19 +125,31 @@ ShallowWrapper {
             SUBMIT
           </button>,
         ],
-        "onSubmit": [MockFunction],
+        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
-        "",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "name",
+            "onChange": [Function],
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "name": "email",
-            "onChange": [MockFunction],
-            "value": "email",
+            "onChange": [Function],
+            "value": "",
           },
           "ref": null,
           "rendered": null,
@@ -148,8 +161,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "name": "password",
-            "onChange": [MockFunction],
-            "value": "password",
+            "onChange": [Function],
+            "value": "",
           },
           "ref": null,
           "rendered": null,

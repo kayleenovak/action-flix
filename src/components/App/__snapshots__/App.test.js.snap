@@ -3,16 +3,7 @@
 exports[`App should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <div
-    className="App"
-  >
-    <Header />
-    <mockConstructor
-      exact={true}
-      path="/"
-      render={[Function]}
-    />
-  </div>,
+  Symbol(enzyme.__unrendered__): <App />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -28,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header />,
-        <mockConstructor
+        <Route
           exact={true}
           path="/"
           render={[Function]}
@@ -50,7 +41,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "exact": true,
           "path": "/",
@@ -58,7 +49,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": null,
-        "type": [MockFunction],
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -71,7 +62,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header />,
-          <mockConstructor
+          <Route
             exact={true}
             path="/"
             render={[Function]}
@@ -93,7 +84,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "exact": true,
             "path": "/",
@@ -101,7 +92,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": [MockFunction],
+          "type": [Function],
         },
       ],
       "type": "div",
