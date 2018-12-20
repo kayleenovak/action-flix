@@ -47,6 +47,7 @@ export class SignUp extends Component {
     const {name, email, password, showSignIn} = this.state
     const signUpBtnName = showSignIn ? 'Sign In' : 'Sign Up'
     const newUserBtnName = showSignIn ? 'New user? Sign up!' : 'Log in instead'
+    const errorMessage = showSignIn ? 'email and password do not match' : 'email already exists'
 
     if (this.props.user) return <Redirect to='/' />
     return (
@@ -58,7 +59,7 @@ export class SignUp extends Component {
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up' onClick={this.handleSubmit}>{signUpBtnName}</button>        
         <button className='submit-sign-up' onClick={this.handleSignUp}>{newUserBtnName}</button>
-        { this.props.hasErrored ? <h3>email and password do not match</h3> : undefined }
+        { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
       </form> 
     )
   }
