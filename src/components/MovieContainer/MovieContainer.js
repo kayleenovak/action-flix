@@ -3,12 +3,13 @@ import { MovieCard } from '../MovieCard/MovieCard'
 import './MovieContainer.css'
 import { connect } from 'react-redux'
 import { fetchMovies } from '../../thunks/fetchMovies.js'
+import { movieDataBaseKey }  from '../../../src/constants.js'
 
 
 export class MovieContainer extends Component {
 async componentDidMount() {
-  console.log(this.props)
-  const url = 'https://api.themoviedb.org/3/discover/movie?api_key=8d54c10134c07bfb8e01ded9e30524be&with_genres=28'
+  let apiKey = movieDataBaseKey
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28`
    await this.props.fetchMovies(url)
 }
 
