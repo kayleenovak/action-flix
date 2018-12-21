@@ -48,4 +48,16 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of NEW_USER with an id', () => {
+    const id = 1
+    const expected = {
+      type: 'NEW_USER',
+      id
+    }
+
+    const result = actions.newUser(id)
+
+    expect(result).toEqual(expected)
+  })
 })

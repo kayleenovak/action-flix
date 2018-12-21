@@ -18,7 +18,7 @@ export const signIn = (id) => ({
   id
 })
 
-export const newUser = (id, name, email, password) => ({
+export const newUser = (id) => ({
   type: 'NEW_USER',
   id
 })
