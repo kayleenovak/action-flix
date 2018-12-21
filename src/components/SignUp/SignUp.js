@@ -58,7 +58,7 @@ export class SignUp extends Component {
         <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } className='email-input'/>
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up' onClick={this.handleSubmit}>{signUpBtnName}</button>        
-        <button className='submit-sign-up' onClick={this.handleSignUp}>{newUserBtnName}</button>
+        <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
         { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
       </form> 
     )

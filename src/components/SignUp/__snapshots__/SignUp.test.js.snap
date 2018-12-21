@@ -39,7 +39,7 @@ ShallowWrapper {
           Sign In
         </button>,
         <button
-          className="submit-sign-up"
+          className="signin-toggle"
           onClick={[Function]}
         >
           New user? Sign up!
@@ -99,7 +99,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "New user? Sign up!",
-          "className": "submit-sign-up",
+          "className": "signin-toggle",
           "onClick": [Function],
         },
         "ref": null,
@@ -138,7 +138,7 @@ ShallowWrapper {
             Sign In
           </button>,
           <button
-            className="submit-sign-up"
+            className="signin-toggle"
             onClick={[Function]}
           >
             New user? Sign up!
@@ -198,7 +198,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "New user? Sign up!",
-            "className": "submit-sign-up",
+            "className": "signin-toggle",
             "onClick": [Function],
           },
           "ref": null,

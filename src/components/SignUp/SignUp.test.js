@@ -45,8 +45,60 @@ describe('SignUp', () => {
   })
 
   describe('handleSubmit', () => {
-    it('should', () => {
-      
+    let mockEvent
+    let wrapper
+    let mockLogin
+    let mockCreateUser
+    let mockId
+
+    beforeEach(() => {
+      mockEvent = {
+        target: {},
+        preventDefault: () => {}
+      }
+      mockLogin = jest.fn()
+      mockCreateUser = jest.fn()
+      mockId = 1
+      wrapper = shallow(<SignUp hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+    })
+
+    it('should invoke handleSubmit on click of signIn button', () => {
+      wrapper.find('.submit-sign-up').simulate('click', mockEvent)
+
+      expect(wrapper.handleSubmit).toHaveBeenCalled
+    })
+
+    it('should invoke checkUserLogin with the correct params if showSignIn is true', () => {
+      wrapper.setState({email: 'this@email.com', password: 'password'})
+      wrapper.instance().handleSubmit(mockEvent)
+
+      expect(mockLogin).toHaveBeenCalledWith('this@email.com', 'password')
+    })
+
+    it('should invoke createNewUser with the correct params if showSignIn is false', () => {
+      wrapper.setState({email: 'this@email.com', password: 'password', name: 'Ryan', showSignIn: false})
+      wrapper.instance().handleSubmit(mockEvent)
+
+      expect(mockCreateUser).toHaveBeenCalledWith('Ryan', 'this@email.com', 'password')
+    })
+
+    it('should reset state', () => {
+      const mockState = {
+        name: 'Ryan',
+        email: 'this@email.com',
+        password: 'password',
+        showSignIn: true
+      }
+      const expected = {
+        name: '',
+        email: '',
+        password: '',
+        showSignIn: true
+      }
+      wrapper.setState(mockState)
+      wrapper.instance().handleSubmit(mockEvent)
+
+      expect(wrapper.state()).toEqual(expected)
     })
   })
 })
