@@ -60,4 +60,14 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of LOG_OUT', () => {
+    const expected = {
+      type: 'LOG_OUT'
+    }
+
+    const result = actions.logOut()
+
+    expect(result).toEqual(expected)
+  })
 })
