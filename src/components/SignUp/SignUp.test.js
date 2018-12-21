@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { SignUp, mapStateToProps, mapDispatchToProps } from './SignUp'
 import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
+import { Redirect } from 'react-router-dom'
 
 describe('SignUp', () => {
   it('should match the snapshot', () => {
@@ -130,6 +131,32 @@ describe('SignUp', () => {
       wrapper.instance().handleSignUp(mockEvent)
 
       expect(wrapper.state()).toEqual(expected)
+    })
+  })
+
+  describe('render', () => {
+    it('should render an h3 if this.props.hasErrored is true', () => {
+      const mockEvent = {
+        target: {},
+        preventDefault: () => {}
+      }
+      const mockLogin = jest.fn()
+      const mockCreateUser = jest.fn()
+      const wrapper = shallow(<SignUp hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+
+      expect(wrapper.find('h3').length).toBe(1)
+    })
+
+    it('should return a Redirect if this.props.user', () => {
+            const mockEvent = {
+        target: {},
+        preventDefault: () => {}
+      }
+      const mockLogin = jest.fn()
+      const mockCreateUser = jest.fn()
+      const wrapper = shallow(<SignUp user='1' hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+
+      expect(wrapper.find(Redirect).length).toBe(1)
     })
   })
 
