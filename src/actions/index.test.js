@@ -36,4 +36,16 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of SIGN_IN with an id', () => {
+    const id = 1
+    const expected = {
+      type: 'SIGN_IN',
+      id
+    }
+
+    const result = actions.signIn(id)
+
+    expect(result).toEqual(expected)
+  })
 })
