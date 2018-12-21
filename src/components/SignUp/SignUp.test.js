@@ -135,25 +135,27 @@ describe('SignUp', () => {
   })
 
   describe('render', () => {
-    it('should render an h3 if this.props.hasErrored is true', () => {
-      const mockEvent = {
+    let mockEvent
+    let mockLogin
+    let mockCreateUser
+    let wrapper
+
+    beforeEach(() => {
+      mockEvent = {
         target: {},
         preventDefault: () => {}
       }
-      const mockLogin = jest.fn()
-      const mockCreateUser = jest.fn()
-      const wrapper = shallow(<SignUp hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      mockLogin = jest.fn()
+      mockCreateUser = jest.fn()
+      wrapper = shallow(<SignUp hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+    })
+
+    it('should render an h3 if this.props.hasErrored is true', () => {
 
       expect(wrapper.find('h3').length).toBe(1)
     })
 
     it('should return a Redirect if this.props.user', () => {
-            const mockEvent = {
-        target: {},
-        preventDefault: () => {}
-      }
-      const mockLogin = jest.fn()
-      const mockCreateUser = jest.fn()
       const wrapper = shallow(<SignUp user='1' hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
 
       expect(wrapper.find(Redirect).length).toBe(1)
