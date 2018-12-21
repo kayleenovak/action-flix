@@ -4,7 +4,7 @@ exports[`Header should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
-    logOutUser={[MockFunction]}
+    logUserOut={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -37,7 +37,7 @@ ShallowWrapper {
           </button>
         </NavLink>,
         <button
-          className="login-btn"
+          className="logout-btn"
           onClick={[Function]}
         >
           Sign Out
@@ -94,7 +94,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Sign Out",
-          "className": "login-btn",
+          "className": "logout-btn",
           "onClick": [Function],
         },
         "ref": null,
@@ -128,7 +128,7 @@ ShallowWrapper {
             </button>
           </NavLink>,
           <button
-            className="login-btn"
+            className="logout-btn"
             onClick={[Function]}
           >
             Sign Out
@@ -185,7 +185,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Sign Out",
-            "className": "login-btn",
+            "className": "logout-btn",
             "onClick": [Function],
           },
           "ref": null,
