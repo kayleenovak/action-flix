@@ -65,12 +65,12 @@ export class SignUp extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.userId,
   hasErrored: state.hasErrored
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   checkUserLogin: (email, password) => dispatch(getUser(email, password)),
   createNewUser: (name, email, password) => dispatch(createUser(name, email, password))
 })

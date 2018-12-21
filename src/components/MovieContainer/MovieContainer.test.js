@@ -41,7 +41,7 @@ describe('MovieContainer', () => {
    })
 
   describe('mapStateToProps', () => {
-     it('should return and object with the keys of movies, isLoading, and hasErrored', () => {
+     it('should return an object with the keys of movies, isLoading, and hasErrored', () => {
        const mockState = {
          movies: [{name: 'Aquaman'}],
          isLoading: false,

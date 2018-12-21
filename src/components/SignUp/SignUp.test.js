@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { SignUp } from './SignUp'
+import { SignUp, mapStateToProps, mapDispatchToProps } from './SignUp'
 
 describe('SignUp', () => {
   it('should match the snapshot', () => {
@@ -22,6 +22,7 @@ describe('SignUp', () => {
         }
       }
     })
+
     it('should invoke handleChange when a change occurs on an input', () => {
       wrapper.handleChange = jest.fn()
 
@@ -127,6 +128,25 @@ describe('SignUp', () => {
       wrapper.instance().handleSignUp(mockEvent)
 
       expect(wrapper.state()).toEqual(expected)
+    })
+  })
+
+  describe('mapStateToProps', () => {
+    it('should return an object with the keys user and hasErrored', () => {
+      const mockState = {
+        userId: 1,
+        hasErrored: false,
+        isLoading: false,
+        movies: []
+      }
+      const expected = {
+        user: 1,
+        hasErrored: false
+      }
+
+      const result = mapStateToProps(mockState)
+
+      expect(result).toEqual(expected)
     })
   })
 })
