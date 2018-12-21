@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { SignUp, mapStateToProps, mapDispatchToProps } from './SignUp'
+import { getUser } from '../../thunks/signIn.js'
+import { createUser } from '../../thunks/createUser.js'
 
 describe('SignUp', () => {
   it('should match the snapshot', () => {
@@ -147,6 +149,34 @@ describe('SignUp', () => {
       const result = mapStateToProps(mockState)
 
       expect(result).toEqual(expected)
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    let mockDispatch
+    let mappedProps
+    let email
+    let password
+    let name
+
+    beforeEach(() => {
+      mockDispatch = jest.fn()
+      mappedProps = mapDispatchToProps(mockDispatch)
+      email = 'this@email.com'
+      password = 'password'
+      name = 'Ryan'
+    })
+
+    it('should call dispatch on checkUserLogin with the correct params', () => {
+      mappedProps.checkUserLogin(email, password)
+
+      expect(mockDispatch).toHaveBeenCalledWith(expect.any(Function))
+    })
+
+    it('should call dispatch on checkUserLogin with the correct params', () => {
+      mappedProps.createNewUser(name, email, password)
+
+      expect(mockDispatch).toHaveBeenCalledWith(expect.any(Function))
     })
   })
 })
