@@ -86,8 +86,7 @@ describe('SignUp', () => {
       const mockState = {
         name: 'Ryan',
         email: 'this@email.com',
-        password: 'password',
-        showSignIn: true
+        password: 'password'
       }
       const expected = {
         name: '',
@@ -95,8 +94,37 @@ describe('SignUp', () => {
         password: '',
         showSignIn: true
       }
+
       wrapper.setState(mockState)
       wrapper.instance().handleSubmit(mockEvent)
+
+      expect(wrapper.state()).toEqual(expected)
+    })
+  })
+
+  describe('handleSignUp', () => {
+    it('should setState', () => {
+      const mockEvent = {
+        target: {},
+        preventDefault: () => {}
+      }
+      const mockLogin = jest.fn()
+      const mockCreateUser = jest.fn()
+      const wrapper = shallow(<SignUp hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      const mockState = {
+        name: '',
+        email: '',
+        password: '',
+        showSignIn: true
+      }
+      const expected = {
+        name: '',
+        email: '',
+        password: '',
+        showSignIn: false
+      }
+
+      wrapper.instance().handleSignUp(mockEvent)
 
       expect(wrapper.state()).toEqual(expected)
     })
