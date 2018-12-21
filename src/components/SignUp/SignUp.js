@@ -55,7 +55,7 @@ export class SignUp extends Component {
       {
         !showSignIn ? <input name="name" value={name} placeholder='Enter name ...' onChange={ this.handleChange } /> : ''
       }
-        <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } />
+        <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } className='email-input'/>
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up' onClick={this.handleSubmit}>{signUpBtnName}</button>        
         <button className='submit-sign-up' onClick={this.handleSignUp}>{newUserBtnName}</button>
