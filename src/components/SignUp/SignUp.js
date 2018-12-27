@@ -55,22 +55,22 @@ export class SignUp extends Component {
       {
         !showSignIn ? <input name="name" value={name} placeholder='Enter name ...' onChange={ this.handleChange } /> : ''
       }
-        <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } />
+        <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } className='email-input'/>
         <input name="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
         <button className='submit-sign-up' onClick={this.handleSubmit}>{signUpBtnName}</button>        
-        <button className='submit-sign-up' onClick={this.handleSignUp}>{newUserBtnName}</button>
+        <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
         { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
       </form> 
     )
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.userId,
   hasErrored: state.hasErrored
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   checkUserLogin: (email, password) => dispatch(getUser(email, password)),
   createNewUser: (name, email, password) => dispatch(createUser(name, email, password))
 })
