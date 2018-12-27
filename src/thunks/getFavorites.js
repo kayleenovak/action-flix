@@ -1,20 +1,19 @@
-import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
-import { cleanMovies } from '../cleaners/cleaners.js'
+import { isLoading, hasErrored } from '../actions'
 
-export const fetchMovies = (url, userId) => {
+export const getFavorites = (userId) => {
+  const url = `http://localhost:3000/api/users/${userId}/favorites`
   return async (dispatch) => {
     try {
       dispatch(isLoading(true))
       const response = await fetch(url)
       if (!response.ok) {
+        dispatch(isLoading(false))
         throw Error(response.statusText)
-      }      
+      }
       dispatch(isLoading(false))
       const data = await response.json()
-      const movies = await cleanMovies(data, userId)
-      dispatch(fetchDataSuccess(movies))
+      return data.data
     } catch (error) {
-      console.log(error)
       dispatch(hasErrored(true))
     }
   }

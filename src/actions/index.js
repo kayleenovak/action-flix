@@ -26,14 +26,3 @@ export const newUser = (id) => ({
 export const logOut = () => ({
   type: 'LOG_OUT'
 })
-
-export const addFavorite = (movieId, userId, title, posterPath, releaseDate, voteAverage, overview) => ({
-  type: 'ADD_FAVORITE',
-  movieId,
-  userId,
-  title, 
-  posterPath,
-  releaseDate,
-  voteAverage,
-  overview
-})

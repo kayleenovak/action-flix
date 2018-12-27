@@ -18,8 +18,9 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" render={() => <MovieContainer movies={this.state.movies}/>}/>
+        <Route exact path="/" render={() => <MovieContainer location='/' />}/>
         <Route exact path='/login' component={ SignUp }/>
+        <Route exact path='/favorites' render={() => <MovieContainer location='/favorites' />} />
       </div>
     );
   }

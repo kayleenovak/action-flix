@@ -1,4 +1,4 @@
-import { addFavorite, isLoading, hasErrored } from '../actions'
+import { isLoading, hasErrored } from '../actions'
 
 export const postFavorite = (movieId, userId, title, posterPath, releaseDate, voteAverage, overview) => {
   const url = 'http://localhost:3000/api/users/favorites/new'
@@ -26,7 +26,6 @@ export const postFavorite = (movieId, userId, title, posterPath, releaseDate, vo
       }
       dispatch(isLoading(false))
       const data = await response.json()
-      dispatch(addFavorite( ...data ))
     } catch (error) {
       dispatch(hasErrored(true))
     }
