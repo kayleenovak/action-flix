@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { Header } from './Header'
-import { mapDispatchToProps } from '../MovieContainer/MovieContainer';
+import { mapDispatchToProps } from './Header';
 import { logOut } from '../../actions/index.js'
 
 describe('Header', () => {
@@ -21,12 +21,16 @@ describe('Header', () => {
     expect(mockLogOut).toHaveBeenCalled
   })
   describe('mapDispatchToProps', () => {
-    it('calls dispatch with a logOut action when the logout button is clicked', () => {
+    it('should call dispatch on logUserOut with the correct params', () => {
       const mockDispatch = jest.fn() 
+      const expected = {
+        type: 'LOG_OUT'
+      }
 
       const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.logUserOut()
 
-      expect(mockDispatch).toHaveBeenCalled
+      expect(mockDispatch).toHaveBeenCalledWith(expected)
 
     })
   });
