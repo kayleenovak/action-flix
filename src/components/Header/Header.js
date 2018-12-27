@@ -9,7 +9,7 @@ export const Header = (props) =>  {
       <header className='header'>
         <h1 className='header-title'>Action Flix</h1>
         <NavLink to='/login'><button className='login-btn'>Login</button></NavLink>
-        <button className='login-btn' onClick={() => props.logUserOut()}>Sign Out</button>
+        <button className='logout-btn' onClick={() => props.logUserOut()}>Sign Out</button>
       </header>
     )
 }
