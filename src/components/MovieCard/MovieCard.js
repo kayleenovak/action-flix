@@ -3,7 +3,7 @@ import './MovieCard.css'
 import { connect } from 'react-redux'
 
 
-export const MovieCard = ({title, posterPath, releaseDate, voteAverage, overview, props}) => {
+export const MovieCard = ({movieId, title, posterPath, releaseDate, voteAverage, overview, props}) => {
   return (
     <article className='movie-card'>
       <img className='movie-img' src={posterPath} alt='movie poster' />
