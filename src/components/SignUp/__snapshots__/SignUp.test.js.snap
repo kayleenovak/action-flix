@@ -39,6 +39,7 @@ ShallowWrapper {
           Sign In
         </button>,
         <button
+          className="submit-sign-up"
           className="signin-toggle"
           onClick={[Function]}
         >
