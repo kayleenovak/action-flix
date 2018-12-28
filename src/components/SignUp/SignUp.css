@@ -1,0 +1,35 @@
+.form-container {
+  background-color: #323740;
+  height: 100%;
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+form {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;  
+  align-items: center;
+  background-color: white; 
+  width: 500px; 
+}
+
+form * {
+  margin-bottom: 20px; 
+  height: 40px; 
+  width: 200px;   
+}
+
+.inner-container {
+  display: flex; 
+  justify-content: center; 
+  flex-direction: column; 
+  background-color: white;
+  margin: 0 auto; 
+}
+
+.message-container {
+  text-align: center; 
+}
