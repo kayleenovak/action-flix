@@ -17,10 +17,8 @@ export const fetchMovies = (url, userId) => {
         favorites = await dispatch(getFavorites(userId))
       }
       const currentMovies = await cleanMovies(movies, favorites)
-      console.log(currentMovies)
       dispatch(fetchDataSuccess(currentMovies))
     } catch (error) {
-      console.log(error)
       dispatch(hasErrored(true))
     }
   }
