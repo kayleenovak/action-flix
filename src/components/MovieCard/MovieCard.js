@@ -3,6 +3,7 @@ import './MovieCard.css'
 import { Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
+import { toggleFavorite } from '../../actions/index.js'
 
 
 export const MovieCard = (props) => {
@@ -11,7 +12,15 @@ export const MovieCard = (props) => {
     if (props.userId === '') {
       props.history.push(`/login`)
     } else {
-      props.addFavorite(props.movies, props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
+      const isFavorite = props.movies.find(movie => {
+        return movie.movieId === props.movieId
+      })
+      console.log(isFavorite)
+      if(isFavorite.favorite === 'false') {
+        console.log(1)
+        props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
+      }
+      props.toggleFavorite(props.title)
     }
   }
 
@@ -33,7 +42,8 @@ export const MovieCard = (props) => {
 
 
 export const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (movieId, userId, title, posterPath, releaseDate, voteAverage, overview) => dispatch(postFavorite(movieId, userId, title, posterPath, releaseDate, voteAverage, overview))
+  addFavorite: (movieId, userId, title, posterPath, releaseDate, voteAverage, overview) => dispatch(postFavorite(movieId, userId, title, posterPath, releaseDate, voteAverage, overview)),
+  toggleFavorite: (movieTitle) => dispatch(toggleFavorite(movieTitle))
 })
 
 export const mapStateToProps = (state, props) => ({

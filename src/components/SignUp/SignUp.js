@@ -46,7 +46,7 @@ export class SignUp extends Component {
   render() {
     const {name, email, password, showSignIn} = this.state
     const signUpBtnName = showSignIn ? 'Sign In' : 'Sign Up'
-    const newUserBtnName = showSignIn ? 'New user? Sign up!' : 'Log in instead'
+    const newUserBtnName = showSignIn ? 'New user? Sign up!' : 'Log in'
     const errorMessage = showSignIn ? 'email and password do not match' : 'email already exists'
 
     if (this.props.user) return <Redirect to='/' />
