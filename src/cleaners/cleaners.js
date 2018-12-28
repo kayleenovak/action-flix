@@ -17,7 +17,7 @@ export const cleanMovies = async (movies, favorites) => {
       voteAverage: movie.vote_average,
       releaseDate: movie.release_date,
       overview: movie.overview,
-      favorite: `${favorite}`
+      favorite
     }
   })
   return allMovies

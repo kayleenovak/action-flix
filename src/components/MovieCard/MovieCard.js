@@ -17,8 +17,7 @@ export const MovieCard = (props) => {
         return movie.movieId === props.movieId
       })
       console.log(isFavorite)
-      if(isFavorite.favorite === 'false') {
-        console.log(1)
+      if(!isFavorite.favorite) {
         props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
       }
       props.toggleFavorite(props.title)
@@ -26,13 +25,14 @@ export const MovieCard = (props) => {
     }
   }
 
+  let favoriteIcon = props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
   return (
     <article className='movie-card'>
       <img className='movie-img' src={props.posterPath} alt='movie poster' />
       <div className='movie-info-text'>
         <div className='movie-icon-container'>
           <p className='movie-rating'>{props.voteAverage}</p>
-          <img src='../images/full-popcorn.svg' alt='full popcorn' onClick={() => checkSignedIn()} />
+          <img src={favoriteIcon} alt='full popcorn' onClick={() => checkSignedIn()} />
         </div>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-release'>{props.releaseDate}</p>
@@ -57,7 +57,8 @@ export const mapStateToProps = (state, props) => ({
   posterPath: props.posterPath, 
   releaseDate: props.releaseDate, 
   voteAverage: props.voteAverage, 
-  overview: props.overview
+  overview: props.overview, 
+  favorite: props.favorite
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MovieCard))
