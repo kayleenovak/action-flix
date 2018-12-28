@@ -1,23 +1,17 @@
 import { getFavorites } from '../thunks/getFavorites.js'
 
 export const cleanMovies = async (movies, userId) => {
-  let favorite = false
   let favoriteMovies
-
   if (userId) {
-    favoriteMovies = await getFavorites(userId)
+    favoriteMovies = await getFavorites(userId) 
   }
-  
-  return movies.results.map(movie => {
+  const allMovies = movies.results.map(movie => {
+    let favorite = false
     if (favoriteMovies) {
-      console.log(favoriteMovies)
       favoriteMovies.forEach(favoriteMovie => {
         if (favoriteMovie.title === movie.title) {
-          console.log('TRUE')
-          favorite = true          
-        } else {
-          console.log('FALSE')
-          favorite = false
+          favorite = true      
+          console.log(favorite)    
         }
       })
     }
@@ -31,4 +25,5 @@ export const cleanMovies = async (movies, userId) => {
       favorite: `${favorite}`
     }
   })
+  return allMovies
 }

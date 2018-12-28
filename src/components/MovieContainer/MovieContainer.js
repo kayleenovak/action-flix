@@ -16,23 +16,26 @@ async componentDidMount() {
 }
 
 render() {
-  if (this.props.movies && this.props.location === '/') {
+  if (this.props.movies.length && this.props.location === '/') {
     const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} />))
     return (
       <div className='movie-container'>
         {actionMovies}
       </div>
     )
-  } 
-  // else if (this.props.movies && this.props.location === '/favorites') {
-  //     const favoriteMovies = favoriteMoviesArr.map((movie) => (<MovieCard {...movie.props} />))
-
-  //     return (
-  //       <div className='movie-container'>
-  //         {favoriteMovies}
-  //       </div>
-  //     )
-  //   } 
+  } else if (this.props.movies.length && this.props.location === '/favorites') {
+    console.log('props', this.props.movies)
+      const favoriteMovies = this.props.movies.filter(movie => {
+        return movie.favorite === 'true'
+      }).map(movie => {
+        return <MovieCard {...movie} />
+      })
+      return (
+        <div className='movie-container'>
+          {favoriteMovies}
+        </div>
+      )
+    } 
     else {
       return <div>{'error'}</div>
     }
