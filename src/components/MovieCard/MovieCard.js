@@ -3,6 +3,7 @@ import './MovieCard.css'
 import { Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
+import { deleteFavorite } from '../../thunks/deleteFavorite.js'
 import { toggleFavorite } from '../../actions/index.js'
 
 
@@ -21,6 +22,7 @@ export const MovieCard = (props) => {
         props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
       }
       props.toggleFavorite(props.title)
+      props.deleteFavorite(props.userId, props.movieId)
     }
   }
 
@@ -43,7 +45,8 @@ export const MovieCard = (props) => {
 
 export const mapDispatchToProps = (dispatch) => ({
   addFavorite: (movieId, userId, title, posterPath, releaseDate, voteAverage, overview) => dispatch(postFavorite(movieId, userId, title, posterPath, releaseDate, voteAverage, overview)),
-  toggleFavorite: (movieTitle) => dispatch(toggleFavorite(movieTitle))
+  toggleFavorite: (movieTitle) => dispatch(toggleFavorite(movieTitle)),
+  deleteFavorite: (userId, movieId) => dispatch(deleteFavorite(userId, movieId))
 })
 
 export const mapStateToProps = (state, props) => ({
