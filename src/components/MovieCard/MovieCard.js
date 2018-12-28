@@ -11,7 +11,7 @@ export const MovieCard = (props) => {
       <div className='movie-info-text'>
         <div className='movie-icon-container'>
           <p className='movie-rating'>{props.voteAverage}</p>
-          <img src='../images/full-popcorn.svg' alt='full popcorn' onClick={() => props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)} />
+          <img src='../images/full-popcorn.svg' alt='full popcorn' onClick={() => props.addFavorite(props.movies, props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)} />
         </div>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-release'>{props.releaseDate}</p>
@@ -26,6 +26,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export const mapStateToProps = (state, props) => ({
+  movies: state.movies,
   userId: state.userId,
   movieId: props.movieId, 
   title: props.title, 
