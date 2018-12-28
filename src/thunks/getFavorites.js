@@ -1,11 +1,19 @@
+import { isLoading, hasErrored } from '../actions/index.js'
 
-
-export const getFavorites = async (userId = 1) => {
+export const getFavorites = (userId) => {
   const url = `http://localhost:3000/api/users/${userId}/favorites`
+  return async (dispatch) => {
     try {
+      dispatch(isLoading(true))
       const response = await fetch(url)
-      const data = await response.json()
-      return data.data
+      if (!response.ok) {
+        throw Error(response.statusText)
+      }
+      dispatch(isLoading(false))
+      const favorites = await response.json()
+      return favorites.data
     } catch (error) {
+      dispatch(hasErrored(true))
     }
   }
+}
