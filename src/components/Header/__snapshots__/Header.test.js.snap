@@ -42,6 +42,17 @@ ShallowWrapper {
         >
           Sign Out
         </button>,
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/favorites"
+        >
+          <button
+            className="favorites-btn"
+          >
+            Favorites
+          </button>
+        </NavLink>,
       ],
       "className": "header",
     },
@@ -101,6 +112,35 @@ ShallowWrapper {
         "rendered": "Sign Out",
         "type": "button",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "aria-current": "page",
+          "children": <button
+            className="favorites-btn"
+          >
+            Favorites
+          </button>,
+          "to": "/favorites",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorites",
+            "className": "favorites-btn",
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": "button",
+        },
+        "type": [Function],
+      },
     ],
     "type": "header",
   },
@@ -133,6 +173,17 @@ ShallowWrapper {
           >
             Sign Out
           </button>,
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/favorites"
+          >
+            <button
+              className="favorites-btn"
+            >
+              Favorites
+            </button>
+          </NavLink>,
         ],
         "className": "header",
       },
@@ -191,6 +242,35 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Sign Out",
           "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "aria-current": "page",
+            "children": <button
+              className="favorites-btn"
+            >
+              Favorites
+            </button>,
+            "to": "/favorites",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites",
+              "className": "favorites-btn",
+            },
+            "ref": null,
+            "rendered": "Favorites",
+            "type": "button",
+          },
+          "type": [Function],
         },
       ],
       "type": "header",
