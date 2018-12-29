@@ -39,7 +39,8 @@ describe('SignUp', () => {
         name: '',
         email: 't',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
 
       wrapper.instance().handleChange(mockEvent)
@@ -96,7 +97,8 @@ describe('SignUp', () => {
         name: '',
         email: '',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
 
       wrapper.setState(mockState)
@@ -119,13 +121,15 @@ describe('SignUp', () => {
         name: '',
         email: '',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
       const expected = {
         name: '',
         email: '',
         password: '',
-        showSignIn: false
+        showSignIn: false,
+        disableButton: true
       }
 
       wrapper.instance().handleSignUp(mockEvent)
@@ -152,7 +156,7 @@ describe('SignUp', () => {
 
     it('should render an h3 if this.props.hasErrored is true', () => {
 
-      expect(wrapper.find('h3').length).toBe(1)
+      expect(wrapper.find('h3').length).toBe(2)
     })
 
     it('should return a Redirect if this.props.user', () => {
