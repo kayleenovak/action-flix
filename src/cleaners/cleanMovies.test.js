@@ -1,4 +1,4 @@
-import { cleanMovies } from './cleaners.js'
+import { cleanMovies } from './cleanMovies.js'
 import { movies } from '../../src/mockData.js'
 
 describe('cleaners', () => {
