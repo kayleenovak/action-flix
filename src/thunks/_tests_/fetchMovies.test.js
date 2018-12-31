@@ -7,8 +7,6 @@ import { getFavorites } from '../getFavorites'
 jest.mock('../getFavorites')
 const cleanMovies = require('../../cleaners/cleanMovies.js')
 
-
-
 describe('fetchMovies', () => {
   let mockUrl 
   let mockDispatch 
