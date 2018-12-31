@@ -46,7 +46,10 @@ describe('signIn', () => {
       ok: true,
       json: () => Promise.resolve({
         email: email,
-        password: password
+        password: password,
+        data: {
+          id: 1
+        }
       })
     })) 
 
