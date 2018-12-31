@@ -1,6 +1,5 @@
 import { createUser } from '../createUser'
 import { isLoading, hasErrored, newUser } from '../../actions/index.js'
-// jest.mock('../createUser')
 
 describe('createUser', () => {
   let mockUrl
