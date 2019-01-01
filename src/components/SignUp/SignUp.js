@@ -4,6 +4,8 @@ import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
 import { connect } from 'react-redux'
 import './SignUp.css'
+import PropTypes from 'prop-types'
+
 
 export class SignUp extends Component {
   constructor() {
@@ -86,6 +88,13 @@ enableButtons = () => {
       </div>
     )
   }
+}
+
+SignUp.propTypes = {
+  user: PropTypes.string.isRequired, 
+  hasErrored: PropTypes.bool.isRequired, 
+  checkUserLogin: PropTypes.func.isRequired, 
+  createNewUser: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({
