@@ -20,11 +20,47 @@
 .movie-icon-container {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0 0 0;
+}
+
+.movie-rating-chart {
+  height: 50px;
+  padding-top: 5px;
+  width: 50px;
+}
+
+.outline-circle,
+.circle {
+  fill: #8E959C;
+  stroke-width: 3;
+}
+
+.outline-circle {
+  stroke: #fff;
+}
+
+.circle {
+  animation: progress 4s ease-out forwards;
+  stroke: #76E1EF;
+  stroke-linecap: round;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+
+  60% {
+    stroke-dasharray: 100 100;
+  }
+}
+
+.movie-rating {
+  font-size: 0.8rem;
 }
 
 .popcorn-icon {
   height: 60px;
-  padding: 10px 0 0 10px;
 }
 
 .movie-title {
