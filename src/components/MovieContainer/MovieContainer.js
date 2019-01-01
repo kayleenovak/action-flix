@@ -24,7 +24,6 @@ render() {
       </div>
     )
   } else if (this.props.movies.length && this.props.location === '/favorites') {
-    console.log('props', this.props.movies)
       const favoriteMovies = this.props.movies.filter(movie => {
         return movie.favorite === 'true'
       }).map(movie => {
