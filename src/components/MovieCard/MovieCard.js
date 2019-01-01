@@ -47,7 +47,8 @@ MovieCard.propTypes = {
   addFavorite: PropTypes.func.isRequired, 
   toggleFavorite: PropTypes.func.isRequired, 
   deleteFavorite: PropTypes.func.isRequired,
-  movies: PropTypes.array.isRequired
+  movies: PropTypes.array.isRequired, 
+  userId: PropTypes.string.isRequired
 }
 
 
