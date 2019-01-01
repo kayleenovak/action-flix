@@ -33,3 +33,18 @@ form * {
 .message-container {
   text-align: center; 
 }
+
+input {
+  border: none;
+  border-bottom: 3px solid grey;
+}
+
+input:focus {
+  outline:none;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to right, rgba(118, 225, 239, 1), rgba(50, 54, 64, 1)) 1 100%;
+  border-image-slice: 1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}

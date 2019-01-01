@@ -16,7 +16,6 @@ export const MovieCard = (props) => {
       const isFavorite = props.movies.find(movie => {
         return movie.movieId === props.movieId
       })
-      console.log(isFavorite)
       if(!isFavorite.favorite) {
         props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
       }
@@ -32,7 +31,7 @@ export const MovieCard = (props) => {
       <div className='movie-info-text'>
         <div className='movie-icon-container'>
           <p className='movie-rating'>{props.voteAverage}</p>
-          <img src={favoriteIcon} alt='full popcorn' onClick={() => checkSignedIn()} />
+          <img src={favoriteIcon} className='favorite-icon' alt='full popcorn' onClick={() => checkSignedIn()} />
         </div>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-release'>{props.releaseDate}</p>

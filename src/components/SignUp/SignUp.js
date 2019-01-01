@@ -24,17 +24,17 @@ export class SignUp extends Component {
     }, () => this.enableButtons())
 }
 
-enableButtons = () => {
-  if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
-    this.setState({
-      disableButton: !this.state.disableButton
-    })
-  } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
-    this.setState({
-      disableButton: !this.state.disableButton
-    })
+  enableButtons = () => {
+    if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
+      this.setState({
+        disableButton: !this.state.disableButton
+      })
+    } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
+      this.setState({
+        disableButton: !this.state.disableButton
+      })
+    }
   }
-}
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -76,8 +76,8 @@ enableButtons = () => {
         {
           !showSignIn ? <input name="name" value={name} placeholder='Enter name ...' onChange={ this.handleChange } /> : ''
         }
-          <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } className='email-input'/>
-          <input name="password"  type="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
+          <input name="email" value={email} placeholder='Email address' onChange={ this.handleChange } className='email-input'/>
+          <input name="password"  type="password" value={password} placeholder='Password' onChange={ this.handleChange } />
           <button className='submit-sign-up' disabled={this.state.disableButton} onClick={this.handleSubmit}>{signUpBtnName}</button>        
           <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
           { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
