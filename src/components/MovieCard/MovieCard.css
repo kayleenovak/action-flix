@@ -63,6 +63,11 @@
   height: 60px;
 }
 
+.movie-title, 
+.movie-release {
+  padding-left: 5px;
+}
+
 .movie-title {
   color: #76E1EF;
   font-size: 1.5rem;
@@ -75,10 +80,16 @@
 }
 
 .movie-description {
-  display: -webkit-box;
-  height: 125px;
-  overflow: hidden;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  border-radius: 10px;
+  cursor: default;
+  overflow: auto;
   width: 200px;
+  height: 100px;
+  transition: box-shadow 500ms;
+  padding: 5px;
 }
+
+.movie-description:hover {
+  box-shadow: inset 0 -45px 130px -55px rgba(0, 0, 0, 1);
+}
+

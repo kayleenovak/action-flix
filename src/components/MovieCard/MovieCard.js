@@ -49,7 +49,9 @@ export const MovieCard = (props) => {
         </div>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-release'>{props.releaseDate}</p>
-        <p className='movie-description'>{props.overview}</p>
+        <div className='movie-description'>
+          {props.overview}
+        </div>
       </div>
     </article>
   )
