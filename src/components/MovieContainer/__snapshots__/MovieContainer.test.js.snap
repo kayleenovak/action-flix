@@ -9,6 +9,7 @@ ShallowWrapper {
         "calls": Array [
           Array [
             "https://api.themoviedb.org/3/discover/movie?api_key=8d54c10134c07bfb8e01ded9e30524be&with_genres=28",
+            undefined,
           ],
         ],
         "results": Array [
@@ -42,27 +43,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <MovieCard
-          name="Aquaman"
-        />,
-      ],
-      "className": "movie-container",
+      "children": "error",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "name": "Aquaman",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+    "rendered": "error",
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -71,27 +55,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <MovieCard
-            name="Aquaman"
-          />,
-        ],
-        "className": "movie-container",
+        "children": "error",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "name": "Aquaman",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+      "rendered": "error",
       "type": "div",
     },
   ],
