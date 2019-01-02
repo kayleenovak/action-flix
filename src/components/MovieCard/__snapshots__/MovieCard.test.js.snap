@@ -33,6 +33,7 @@ ShallowWrapper {
             />
             <img
               alt="full popcorn"
+              className="favorite-icon"
               onClick={[Function]}
               src="../images/empty-popcorn.svg"
             />
@@ -79,6 +80,7 @@ ShallowWrapper {
               />
               <img
                 alt="full popcorn"
+                className="favorite-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -108,6 +110,7 @@ ShallowWrapper {
                 />,
                 <img
                   alt="full popcorn"
+                  className="favorite-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />,
@@ -134,6 +137,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "alt": "full popcorn",
+                  "className": "favorite-icon",
                   "onClick": [Function],
                   "src": "../images/empty-popcorn.svg",
                 },
@@ -208,6 +212,7 @@ ShallowWrapper {
               />
               <img
                 alt="full popcorn"
+                className="favorite-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -254,6 +259,7 @@ ShallowWrapper {
                 />
                 <img
                   alt="full popcorn"
+                  className="favorite-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />
@@ -283,6 +289,7 @@ ShallowWrapper {
                   />,
                   <img
                     alt="full popcorn"
+                    className="favorite-icon"
                     onClick={[Function]}
                     src="../images/empty-popcorn.svg"
                   />,
@@ -309,6 +316,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "alt": "full popcorn",
+                    "className": "favorite-icon",
                     "onClick": [Function],
                     "src": "../images/empty-popcorn.svg",
                   },

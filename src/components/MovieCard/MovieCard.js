@@ -32,6 +32,7 @@ export const MovieCard = (props) => {
       <img className='movie-img' src={props.posterPath} alt='movie poster' />
       <div className='movie-info-text'>
         <div className='movie-icon-container'>
+          <p className='movie-rating'>{props.voteAverage}</p>
           <svg className='movie-rating-chart' viewBox="0 0 36 36">
             <path className='outline-circle'
             d="M18 2.0845
