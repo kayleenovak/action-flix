@@ -42,8 +42,15 @@ describe('createUser', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
   })
   it('should dispatch newUser if our response is ok', async () => {
+    const mockUser = {
+      name: 'Jim', 
+      password: 'password', 
+      email: 'jim@ymail.com', 
+      id: 3
+    }
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true 
+      ok: true, 
+      json: () => Promise.resolve(mockUser)
     }))
 
     const thunk = createUser(mockUrl)
