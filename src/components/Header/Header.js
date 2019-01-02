@@ -33,7 +33,7 @@ export class Header extends Component {
           <div className='dropdown-wrapper'>
             <div className='dropdown-header'>
               <div className='dropdown-title'>
-                <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello Bill</h3>
+                <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello {this.props.name}</h3>
               </div>
             </div>
             { !this.state.listOpen ?  null : 
@@ -61,7 +61,8 @@ Header.proptypes = {
 }
 
 export const mapStateToProps = (state) => ({
-  user: state.userId
+  user: state.userId,
+  name: state.userName
 })
 
 export const mapDispatchToProps = (dispatch) => ({

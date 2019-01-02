@@ -1,7 +1,7 @@
 import React from 'react'
 import './MovieCard.css'
 import { Component } from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
 import { deleteFavorite } from '../../thunks/deleteFavorite.js'
@@ -92,3 +92,4 @@ export const mapStateToProps = (state, props) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MovieCard))
+
