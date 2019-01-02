@@ -26,16 +26,15 @@ export class SignUp extends Component {
     }, () => this.enableButtons())
   }
 
-  enableButtons = () => {
-    if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
-      this.setState({
-        disableButton: false
-      })
-    } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
-      this.setState({
-        disableButton: false
-      })
-    }
+enableButtons = () => {
+  if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
+    this.setState({
+      disableButton: false
+    })
+  } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
+    this.setState({
+      disableButton: false
+    })
   }
 
   handleSubmit = (e) => {

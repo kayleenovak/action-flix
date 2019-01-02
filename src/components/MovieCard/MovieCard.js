@@ -1,5 +1,6 @@
 import React from 'react'
 import './MovieCard.css'
+import { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
@@ -9,55 +10,58 @@ import PropTypes from 'prop-types'
 
 
 
-export const MovieCard = (props) => {
+export class MovieCard extends Component {
 
-  const checkSignedIn = () => {
-    if (props.userId === '') {
-      props.history.push(`/login`)
+  checkSignedIn = () => {
+    if (this.props.userId === '') {
+      this.props.history.push(`/login`)
     } else {
-      const isFavorite = props.movies.find(movie => {
-        return movie.movieId === props.movieId
+      const isFavorite = this.props.movies.find(movie => {
+        return movie.movieId === this.props.movieId
       })
       if(!isFavorite.favorite) {
-        props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
+        this.props.addFavorite(this.props.movieId, this.props.userId, this.props.title, this.props.posterPath, this.props.releaseDate, this.props.voteAverage, this.props.overview)
+        this.props.toggleFavorite(this.props.title)
+      } else {
+        this.props.toggleFavorite(this.props.title)
+        this.props.deleteFavorite(this.props.userId, this.props.movieId)
       }
-      props.toggleFavorite(props.title)
-      props.deleteFavorite(props.userId, props.movieId)
     }
   }
 
-  let favoriteIcon = props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
-  return (
-    <article className='movie-card'>
-      <img className='movie-img' src={props.posterPath} alt='movie poster' />
-      <div className='movie-info-text'>
-        <div className='movie-icon-container'>
-          <p className='movie-rating'>{props.voteAverage}</p>
-          <svg className='movie-rating-chart' viewBox="0 0 36 36">
-            <path className='outline-circle'
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-            strokeDasharray="100, 100"               
-            />
-            <path className='circle'
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-            strokeDasharray={`${props.voteAverage * 10}, 100`}               
-            />
-            <text textAnchor="middle" x="17" y="22" className='movie-rating'>{props.voteAverage}</text>
-          </svg>
-          <img className='popcorn-icon' src={favoriteIcon} alt='full popcorn' onClick={() => checkSignedIn()} />
+  render() {
+   let favoriteIcon = this.props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
+    return (
+      <article className='movie-card'>
+        <img className='movie-img' src={props.posterPath} alt='movie poster' />
+        <div className='movie-info-text'>
+          <div className='movie-icon-container'>
+            <p className='movie-rating'>{props.voteAverage}</p>
+            <svg className='movie-rating-chart' viewBox="0 0 36 36">
+              <path className='outline-circle'
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+              strokeDasharray="100, 100"               
+              />
+              <path className='circle'
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+              strokeDasharray={`${props.voteAverage * 10}, 100`}               
+              />
+              <text textAnchor="middle" x="17" y="22" className='movie-rating'>{props.voteAverage}</text>
+            </svg>
+            <img className='popcorn-icon' src={favoriteIcon} alt='full popcorn' onClick={() => checkSignedIn()} />
+          </div>
+          <h3 className='movie-title'>{props.title}</h3>
+          <p className='movie-release'>{props.releaseDate}</p>
+          <div className='movie-description'>
+            {props.overview}
+          </div>
         </div>
-        <h3 className='movie-title'>{props.title}</h3>
-        <p className='movie-release'>{props.releaseDate}</p>
-        <div className='movie-description'>
-          {props.overview}
-        </div>
-      </div>
-    </article>
-  )
+      </article>
+    )
 }
 
 MovieCard.propTypes = {
