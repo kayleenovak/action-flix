@@ -17,7 +17,6 @@ export class MovieCard extends Component {
       const isFavorite = this.props.movies.find(movie => {
         return movie.movieId === this.props.movieId
       })
-        console.log(isFavorite)
       if(!isFavorite.favorite) {
         this.props.addFavorite(this.props.movieId, this.props.userId, this.props.title, this.props.posterPath, this.props.releaseDate, this.props.voteAverage, this.props.overview)
         this.props.toggleFavorite(this.props.title)
@@ -30,6 +29,7 @@ export class MovieCard extends Component {
 
   render() {
    let favoriteIcon = this.props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
+   
     return (
       <article className='movie-card'>
         <img className='movie-img' src={this.props.posterPath} alt='movie poster' />
