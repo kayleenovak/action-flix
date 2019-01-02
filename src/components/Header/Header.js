@@ -27,25 +27,25 @@ export class Header extends Component {
       </header>   
     )
   
-  const loggedIn = (
-  <header className="header">
-    <h1 className='header-title'>Action Flix</h1>
-      <div className='dropdown-wrapper'>
-        <div className='dropdown-header'>
-          <div className='dropdown-title'>
-            <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello Bill</h3>
+    const loggedIn = (
+      <header className="header">
+        <h1 className='header-title'>Action Flix</h1>
+          <div className='dropdown-wrapper'>
+            <div className='dropdown-header'>
+              <div className='dropdown-title'>
+                <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello Bill</h3>
+              </div>
+            </div>
+            { !this.state.listOpen ?  null : 
+              <article className='dropdown-list'>
+                <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
+                <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
+              </article>
+              
+            }
           </div>
-        </div>
-        { !this.state.listOpen ?  null : 
-          <article className='dropdown-list'>
-            <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
-            <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
-          </article>
-          
-        }
-      </div>
-  </header>
-  )
+      </header>
+    )
     if (this.props.user) {
        return loggedIn
     }
@@ -53,9 +53,6 @@ export class Header extends Component {
         notLoggedIn 
     )
   }
-
-
-
 }
 
 

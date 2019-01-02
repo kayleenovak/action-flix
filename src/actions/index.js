@@ -13,9 +13,10 @@ export const fetchDataSuccess = (movies) => ({
   movies
 })
 
-export const signIn = (id) => ({
+export const signIn = (id, name) => ({
   type: 'SIGN_IN',
-  id
+  id, 
+  name
 })
 
 export const newUser = (id) => ({
