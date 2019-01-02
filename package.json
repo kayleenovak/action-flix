@@ -2,6 +2,9 @@
   "name": "action-flix",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": ["src/actions/*.js", "src/cleaners/*.js", "src/components/**/*.js", "src/reducers/*.js", "src/thunks/*.js"]
+  },
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.6.3",

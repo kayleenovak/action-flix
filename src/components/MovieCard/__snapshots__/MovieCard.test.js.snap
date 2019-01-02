@@ -43,10 +43,30 @@ ShallowWrapper {
             <p
               className="movie-rating"
             />
+            <svg
+              className="movie-rating-chart"
+              viewBox="0 0 36 36"
+            >
+              <path
+                className="outline-circle"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                strokeDasharray="100, 100"
+              />
+              <path
+                className="circle"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                strokeDasharray="NaN, 100"
+              />
+              <text
+                className="movie-rating"
+                textAnchor="middle"
+                x="17"
+                y="22"
+              />
+            </svg>
             <img
               alt="full popcorn"
-              className="popcorn"
-              className="favorite-icon"
+              className="popcorn-icon"
               onClick={[Function]}
               src="../images/empty-popcorn.svg"
             />
@@ -57,7 +77,7 @@ ShallowWrapper {
           <p
             className="movie-release"
           />
-          <p
+          <div
             className="movie-description"
           />
         </div>,
@@ -91,10 +111,30 @@ ShallowWrapper {
               <p
                 className="movie-rating"
               />
+              <svg
+                className="movie-rating-chart"
+                viewBox="0 0 36 36"
+              >
+                <path
+                  className="outline-circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  strokeDasharray="100, 100"
+                />
+                <path
+                  className="circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  strokeDasharray="NaN, 100"
+                />
+                <text
+                  className="movie-rating"
+                  textAnchor="middle"
+                  x="17"
+                  y="22"
+                />
+              </svg>
               <img
                 alt="full popcorn"
-                className="popcorn"
-                className="favorite-icon"
+                className="popcorn-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -105,7 +145,7 @@ ShallowWrapper {
             <p
               className="movie-release"
             />,
-            <p
+            <div
               className="movie-description"
             />,
           ],
@@ -122,10 +162,30 @@ ShallowWrapper {
                 <p
                   className="movie-rating"
                 />,
+                <svg
+                  className="movie-rating-chart"
+                  viewBox="0 0 36 36"
+                >
+                  <path
+                    className="outline-circle"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    strokeDasharray="100, 100"
+                  />
+                  <path
+                    className="circle"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    strokeDasharray="NaN, 100"
+                  />
+                  <text
+                    className="movie-rating"
+                    textAnchor="middle"
+                    x="17"
+                    y="22"
+                  />
+                </svg>,
                 <img
                   alt="full popcorn"
-                  className="popcorn"
-                  className="favorite-icon"
+                  className="popcorn-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />,
@@ -151,9 +211,80 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "children": Array [
+                    <path
+                      className="outline-circle"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      strokeDasharray="100, 100"
+                    />,
+                    <path
+                      className="circle"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      strokeDasharray="NaN, 100"
+                    />,
+                    <text
+                      className="movie-rating"
+                      textAnchor="middle"
+                      x="17"
+                      y="22"
+                    />,
+                  ],
+                  "className": "movie-rating-chart",
+                  "viewBox": "0 0 36 36",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "outline-circle",
+                      "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
+                      "strokeDasharray": "100, 100",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "path",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "circle",
+                      "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
+                      "strokeDasharray": "NaN, 100",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "path",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "className": "movie-rating",
+                      "textAnchor": "middle",
+                      "x": "17",
+                      "y": "22",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "text",
+                  },
+                ],
+                "type": "svg",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
                   "alt": "full popcorn",
-                  "className": "popcorn",
-                  "className": "favorite-icon",
+                  "className": "popcorn-icon",
                   "onClick": [Function],
                   "src": "../images/empty-popcorn.svg",
                 },
@@ -198,7 +329,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
-            "type": "p",
+            "type": "div",
           },
         ],
         "type": "div",
@@ -226,10 +357,30 @@ ShallowWrapper {
               <p
                 className="movie-rating"
               />
+              <svg
+                className="movie-rating-chart"
+                viewBox="0 0 36 36"
+              >
+                <path
+                  className="outline-circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  strokeDasharray="100, 100"
+                />
+                <path
+                  className="circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  strokeDasharray="NaN, 100"
+                />
+                <text
+                  className="movie-rating"
+                  textAnchor="middle"
+                  x="17"
+                  y="22"
+                />
+              </svg>
               <img
                 alt="full popcorn"
-                className="popcorn"
-                className="favorite-icon"
+                className="popcorn-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -240,7 +391,7 @@ ShallowWrapper {
             <p
               className="movie-release"
             />
-            <p
+            <div
               className="movie-description"
             />
           </div>,
@@ -274,10 +425,30 @@ ShallowWrapper {
                 <p
                   className="movie-rating"
                 />
+                <svg
+                  className="movie-rating-chart"
+                  viewBox="0 0 36 36"
+                >
+                  <path
+                    className="outline-circle"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    strokeDasharray="100, 100"
+                  />
+                  <path
+                    className="circle"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    strokeDasharray="NaN, 100"
+                  />
+                  <text
+                    className="movie-rating"
+                    textAnchor="middle"
+                    x="17"
+                    y="22"
+                  />
+                </svg>
                 <img
                   alt="full popcorn"
-                  className="popcorn"
-                  className="favorite-icon"
+                  className="popcorn-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />
@@ -288,7 +459,7 @@ ShallowWrapper {
               <p
                 className="movie-release"
               />,
-              <p
+              <div
                 className="movie-description"
               />,
             ],
@@ -305,10 +476,30 @@ ShallowWrapper {
                   <p
                     className="movie-rating"
                   />,
+                  <svg
+                    className="movie-rating-chart"
+                    viewBox="0 0 36 36"
+                  >
+                    <path
+                      className="outline-circle"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      strokeDasharray="100, 100"
+                    />
+                    <path
+                      className="circle"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      strokeDasharray="NaN, 100"
+                    />
+                    <text
+                      className="movie-rating"
+                      textAnchor="middle"
+                      x="17"
+                      y="22"
+                    />
+                  </svg>,
                   <img
                     alt="full popcorn"
-                    className="popcorn"
-                    className="favorite-icon"
+                    className="popcorn-icon"
                     onClick={[Function]}
                     src="../images/empty-popcorn.svg"
                   />,
@@ -334,9 +525,80 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
+                    "children": Array [
+                      <path
+                        className="outline-circle"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        strokeDasharray="100, 100"
+                      />,
+                      <path
+                        className="circle"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        strokeDasharray="NaN, 100"
+                      />,
+                      <text
+                        className="movie-rating"
+                        textAnchor="middle"
+                        x="17"
+                        y="22"
+                      />,
+                    ],
+                    "className": "movie-rating-chart",
+                    "viewBox": "0 0 36 36",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "outline-circle",
+                        "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
+                        "strokeDasharray": "100, 100",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "path",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "circle",
+                        "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
+                        "strokeDasharray": "NaN, 100",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "path",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                        "className": "movie-rating",
+                        "textAnchor": "middle",
+                        "x": "17",
+                        "y": "22",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "text",
+                    },
+                  ],
+                  "type": "svg",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
                     "alt": "full popcorn",
-                    "className": "popcorn",
-                    "className": "favorite-icon",
+                    "className": "popcorn-icon",
                     "onClick": [Function],
                     "src": "../images/empty-popcorn.svg",
                   },
@@ -381,7 +643,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": null,
-              "type": "p",
+              "type": "div",
             },
           ],
           "type": "div",
