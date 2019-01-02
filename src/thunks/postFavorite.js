@@ -21,7 +21,6 @@ export const postFavorite = (movieId, userId, title, posterPath, releaseDate, vo
           'Content-Type': 'application/json'
         }
       })
-      console.log(response)
       if (!response.ok) {
         dispatch(isLoading(false))
         throw Error(response.statusText)
@@ -29,7 +28,6 @@ export const postFavorite = (movieId, userId, title, posterPath, releaseDate, vo
       dispatch(isLoading(false))
       const data = await response.json()
     } catch (error) {
-      console.log(error)
       dispatch(hasErrored(true))
     }
   }

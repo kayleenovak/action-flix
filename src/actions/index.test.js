@@ -70,4 +70,16 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of TOGGLE_FAVORITE with a movie title', () => {
+    const movieTitle = 'Aquaman'
+    const expected = {
+      type: 'TOGGLE_FAVORITE',
+      movieTitle
+    }
+
+    const result = actions.toggleFavorite(movieTitle)
+
+    expect(result).toEqual(expected)
+  })
 })

@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
 import { deleteFavorite } from '../../thunks/deleteFavorite.js'
 import { toggleFavorite } from '../../actions/index.js'
+import PropTypes from 'prop-types'
+
 
 
 export const MovieCard = (props) => {
@@ -31,14 +33,39 @@ export const MovieCard = (props) => {
       <div className='movie-info-text'>
         <div className='movie-icon-container'>
           <p className='movie-rating'>{props.voteAverage}</p>
-          <img src={favoriteIcon} className='favorite-icon' alt='full popcorn' onClick={() => checkSignedIn()} />
+          <svg className='movie-rating-chart' viewBox="0 0 36 36">
+            <path className='outline-circle'
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+            strokeDasharray="100, 100"               
+            />
+            <path className='circle'
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+            strokeDasharray={`${props.voteAverage * 10}, 100`}               
+            />
+            <text textAnchor="middle" x="17" y="22" className='movie-rating'>{props.voteAverage}</text>
+          </svg>
+          <img className='popcorn-icon' src={favoriteIcon} alt='full popcorn' onClick={() => checkSignedIn()} />
         </div>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-release'>{props.releaseDate}</p>
-        <p className='movie-description'>{props.overview}</p>
+        <div className='movie-description'>
+          {props.overview}
+        </div>
       </div>
     </article>
   )
+}
+
+MovieCard.propTypes = {
+  addFavorite: PropTypes.func.isRequired, 
+  toggleFavorite: PropTypes.func.isRequired, 
+  deleteFavorite: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired, 
+  userId: PropTypes.string.isRequired
 }
 
 

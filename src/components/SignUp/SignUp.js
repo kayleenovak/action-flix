@@ -4,6 +4,8 @@ import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
 import { connect } from 'react-redux'
 import './SignUp.css'
+import PropTypes from 'prop-types'
+
 
 export class SignUp extends Component {
   constructor() {
@@ -22,7 +24,7 @@ export class SignUp extends Component {
     this.setState({
       [name]: value
     }, () => this.enableButtons())
-}
+  }
 
   enableButtons = () => {
     if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
@@ -102,6 +104,13 @@ export class SignUp extends Component {
       </div>
     )
   }
+}
+
+SignUp.propTypes = {
+  user: PropTypes.string.isRequired, 
+  hasErrored: PropTypes.bool.isRequired, 
+  checkUserLogin: PropTypes.func.isRequired, 
+  createNewUser: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({

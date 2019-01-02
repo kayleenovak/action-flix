@@ -39,10 +39,68 @@ describe('SignUp', () => {
         name: '',
         email: 't',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
 
       wrapper.instance().handleChange(mockEvent)
+
+      expect(wrapper.state()).toEqual(expected)
+    })
+
+    it('should invoke enableButtons', () => {
+      const mockFunction = jest.fn()
+      wrapper.enableButtons = mockFunction
+      wrapper.instance().handleChange(mockEvent)
+
+      expect(mockFunction).toHaveBeenCalled
+
+    })
+  })
+
+  describe('enableButtons', () => {
+    it('should toggle the disableButton value in state if showSignIn is true', () => {
+      const mockState = {
+        name: '',
+        email: 't',
+        password: 't',
+        showSignIn: true,
+        disableButton: true
+      }
+      const expected = {
+        name: '',
+        email: 't',
+        password: 't',
+        showSignIn: true,
+        disableButton: false
+      }
+      const wrapper = shallow(<SignUp />)
+
+      wrapper.setState(mockState)
+      wrapper.instance().enableButtons()
+
+      expect(wrapper.state()).toEqual(expected)
+    })
+
+    it('should toggle the disableButton value in state if showSignIn is false', () => {
+      const mockState = {
+        name: 't',
+        email: 't',
+        password: 't',
+        showSignIn: false,
+        disableButton: true
+      }
+      const expected = {
+        name: 't',
+        email: 't',
+        password: 't',
+        showSignIn: false,
+        disableButton: false
+      }
+      const wrapper = shallow(<SignUp />)
+
+      wrapper.setState(mockState)
+      wrapper.instance().enableButtons()
 
       expect(wrapper.state()).toEqual(expected)
     })
@@ -96,7 +154,8 @@ describe('SignUp', () => {
         name: '',
         email: '',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
 
       wrapper.setState(mockState)
@@ -119,13 +178,15 @@ describe('SignUp', () => {
         name: '',
         email: '',
         password: '',
-        showSignIn: true
+        showSignIn: true,
+        disableButton: true
       }
       const expected = {
         name: '',
         email: '',
         password: '',
-        showSignIn: false
+        showSignIn: false,
+        disableButton: true
       }
 
       wrapper.instance().handleSignUp(mockEvent)
@@ -152,7 +213,7 @@ describe('SignUp', () => {
 
     it('should render an h3 if this.props.hasErrored is true', () => {
 
-      expect(wrapper.find('h3').length).toBe(1)
+      expect(wrapper.find('h3').length).toBe(2)
     })
 
     it('should return a Redirect if this.props.user', () => {
