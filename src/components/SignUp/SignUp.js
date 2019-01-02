@@ -27,11 +27,11 @@ export class SignUp extends Component {
   enableButtons = () => {
     if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
       this.setState({
-        disableButton: !this.state.disableButton
+        disableButton: false
       })
     } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
       this.setState({
-        disableButton: !this.state.disableButton
+        disableButton: false
       })
     }
   }
@@ -82,6 +82,21 @@ export class SignUp extends Component {
           <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
           { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
           </form> 
+        </div>
+        <div className='login-side-page'>
+          <div className='side-page-text'>
+            <h2>Action Flix</h2>
+            <h3>All inclusive access to action films</h3>
+          </div>
+          <div className='circles-container'>
+            <div className='circle-five'></div>
+            <div className='circle-six'></div>
+            <div className='circle-two'></div>
+            <div className='circle-one'></div>
+            <div className='circle-four'></div>
+            <div className='circle-three'></div>
+            <div className='large-circle'></div>
+          </div>
         </div>
       </div>
     )
