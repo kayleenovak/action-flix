@@ -31,15 +31,16 @@
 
 .outline-circle,
 .circle {
-  fill: #8E959C;
   stroke-width: 3;
 }
 
 .outline-circle {
+  fill: #8E959C;
   stroke: #fff;
 }
 
 .circle {
+  fill: none;
   animation: progress 4s ease-out forwards;
   stroke: #76E1EF;
   stroke-linecap: round;
