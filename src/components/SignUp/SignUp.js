@@ -27,11 +27,11 @@ export class SignUp extends Component {
 enableButtons = () => {
   if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
     this.setState({
-      disableButton: !this.state.disableButton
+      disableButton: false
     })
   } else if (!this.state.showSignIn && this.state.email !== ''  && this.state.password !== '' && this.state.name !== '') {
     this.setState({
-      disableButton: !this.state.disableButton
+      disableButton: false
     })
   }
 }

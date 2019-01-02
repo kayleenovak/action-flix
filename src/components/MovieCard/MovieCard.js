@@ -17,11 +17,14 @@ export class MovieCard extends Component {
       const isFavorite = this.props.movies.find(movie => {
         return movie.movieId === this.props.movieId
       })
+        console.log(isFavorite)
       if(!isFavorite.favorite) {
         this.props.addFavorite(this.props.movieId, this.props.userId, this.props.title, this.props.posterPath, this.props.releaseDate, this.props.voteAverage, this.props.overview)
+        this.props.toggleFavorite(this.props.title)
+      } else {
+        this.props.toggleFavorite(this.props.title)
+        this.props.deleteFavorite(this.props.userId, this.props.movieId)
       }
-      this.props.toggleFavorite(this.props.title)
-      this.props.deleteFavorite(this.props.userId, this.props.movieId)
     }
   }
 
@@ -33,7 +36,7 @@ export class MovieCard extends Component {
         <div className='movie-info-text'>
           <div className='movie-icon-container'>
             <p className='movie-rating'>{this.props.voteAverage}</p>
-            <img src={favoriteIcon} alt='full popcorn' onClick={() => this.checkSignedIn()} />
+            <img src={favoriteIcon} alt='full popcorn' onClick={() => this.checkSignedIn()} className='popcorn'/>
           </div>
           <h3 className='movie-title'>{this.props.title}</h3>
           <p className='movie-release'>{this.props.releaseDate}</p>

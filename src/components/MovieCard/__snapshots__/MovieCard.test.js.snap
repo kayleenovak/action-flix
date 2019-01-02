@@ -3,7 +3,19 @@
 exports[`MovieCard should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <MovieCard />,
+  Symbol(enzyme.__unrendered__): <MovieCard
+    movies={
+      Array [
+        Object {
+          "title": "Aquaman",
+        },
+        Object {
+          "title": "Transformers",
+        },
+      ]
+    }
+    userId={1}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -33,7 +45,9 @@ ShallowWrapper {
             />
             <img
               alt="full popcorn"
-              src="../images/full-popcorn.svg"
+              className="popcorn"
+              onClick={[Function]}
+              src="../images/empty-popcorn.svg"
             />
           </div>
           <h3
@@ -78,7 +92,9 @@ ShallowWrapper {
               />
               <img
                 alt="full popcorn"
-                src="../images/full-popcorn.svg"
+                className="popcorn"
+                onClick={[Function]}
+                src="../images/empty-popcorn.svg"
               />
             </div>,
             <h3
@@ -106,7 +122,9 @@ ShallowWrapper {
                 />,
                 <img
                   alt="full popcorn"
-                  src="../images/full-popcorn.svg"
+                  className="popcorn"
+                  onClick={[Function]}
+                  src="../images/empty-popcorn.svg"
                 />,
               ],
               "className": "movie-icon-container",
@@ -131,7 +149,9 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "alt": "full popcorn",
-                  "src": "../images/full-popcorn.svg",
+                  "className": "popcorn",
+                  "onClick": [Function],
+                  "src": "../images/empty-popcorn.svg",
                 },
                 "ref": null,
                 "rendered": null,
@@ -204,7 +224,9 @@ ShallowWrapper {
               />
               <img
                 alt="full popcorn"
-                src="../images/full-popcorn.svg"
+                className="popcorn"
+                onClick={[Function]}
+                src="../images/empty-popcorn.svg"
               />
             </div>
             <h3
@@ -249,7 +271,9 @@ ShallowWrapper {
                 />
                 <img
                   alt="full popcorn"
-                  src="../images/full-popcorn.svg"
+                  className="popcorn"
+                  onClick={[Function]}
+                  src="../images/empty-popcorn.svg"
                 />
               </div>,
               <h3
@@ -277,7 +301,9 @@ ShallowWrapper {
                   />,
                   <img
                     alt="full popcorn"
-                    src="../images/full-popcorn.svg"
+                    className="popcorn"
+                    onClick={[Function]}
+                    src="../images/empty-popcorn.svg"
                   />,
                 ],
                 "className": "movie-icon-container",
@@ -302,7 +328,9 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "alt": "full popcorn",
-                    "src": "../images/full-popcorn.svg",
+                    "className": "popcorn",
+                    "onClick": [Function],
+                    "src": "../images/empty-popcorn.svg",
                   },
                   "ref": null,
                   "rendered": null,
