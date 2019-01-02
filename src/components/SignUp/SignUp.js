@@ -70,7 +70,7 @@ export class SignUp extends Component {
         <div className="inner-container">
           <article className="message-container">
             <h1>Welcome To Action Flix!</h1>
-            <h3>{popUpMessage}</h3>
+            <h3 className='popup-message'>{popUpMessage}</h3>
           </article>
           <form onSubmit={ this.handleSubmit }>
         {
@@ -85,8 +85,9 @@ export class SignUp extends Component {
         </div>
         <div className='login-side-page'>
           <div className='side-page-text'>
-            <h2>Action Flix</h2>
-            <h3>All inclusive access to action films</h3>
+            <h2 className='login-page-title'>Action Flix</h2>
+            <h3 className='slogan'>Everything you need to know in one place.</h3>
+            <p className='description'>All-inclusive access to action films. Track your favorite movies. Stay up-to-date with new movies.</p>
           </div>
           <div className='circles-container'>
             <div className='circle-five'></div>
