@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { fetchMovies } from '../../thunks/fetchMovies.js'
 import { movieDataBaseKey }  from '../../../src/constants.js'
 import { getFavorites } from '../../thunks/getFavorites.js'
+import PropTypes from 'prop-types'
+
 
 
 export class MovieContainer extends Component {
@@ -24,7 +26,6 @@ render() {
       </div>
     )
   } else if (this.props.movies.length && this.props.location === '/favorites') {
-    console.log('props', this.props.movies)
       const favoriteMovies = this.props.movies.filter(movie => {
         return movie.favorite === 'true'
       }).map(movie => {
@@ -40,6 +41,15 @@ render() {
       return <div>{'error'}</div>
     }
   }
+}
+
+MovieContainer.propTypes = {
+  fetchMovies: PropTypes.func.isRequired, 
+  getFavorites: PropTypes.func.isRequired, 
+  userId: PropTypes.string.isRequired, 
+  isLoading: PropTypes.bool.isRequired, 
+  hasErrored: PropTypes.bool.isRequired, 
+  movies: PropTypes.array.isRequired
 }
 
 export const mapStateToProps = (state) => {

@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
 import { deleteFavorite } from '../../thunks/deleteFavorite.js'
 import { toggleFavorite } from '../../actions/index.js'
+import PropTypes from 'prop-types'
+
 
 
 export const MovieCard = (props) => {
@@ -16,7 +18,6 @@ export const MovieCard = (props) => {
       const isFavorite = props.movies.find(movie => {
         return movie.movieId === props.movieId
       })
-      console.log(isFavorite)
       if(!isFavorite.favorite) {
         props.addFavorite(props.movieId, props.userId, props.title, props.posterPath, props.releaseDate, props.voteAverage, props.overview)
       }
@@ -40,6 +41,14 @@ export const MovieCard = (props) => {
       </div>
     </article>
   )
+}
+
+MovieCard.propTypes = {
+  addFavorite: PropTypes.func.isRequired, 
+  toggleFavorite: PropTypes.func.isRequired, 
+  deleteFavorite: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired, 
+  userId: PropTypes.string.isRequired
 }
 
 
