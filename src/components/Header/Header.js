@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { logOut } from '../../actions/index.js'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
+import PropTypes from 'prop-types'
 
 export const Header = (props) =>  {
     return (
@@ -13,6 +14,10 @@ export const Header = (props) =>  {
         <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
       </header>
     )
+}
+
+Header.proptypes = {
+  logOut: PropTypes.func.isRequired
 }
 
 export const mapDispatchToProps = (dispatch) => ({

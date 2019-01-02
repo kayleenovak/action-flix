@@ -46,6 +46,7 @@ ShallowWrapper {
             <img
               alt="full popcorn"
               className="popcorn"
+              className="favorite-icon"
               onClick={[Function]}
               src="../images/empty-popcorn.svg"
             />
@@ -93,6 +94,7 @@ ShallowWrapper {
               <img
                 alt="full popcorn"
                 className="popcorn"
+                className="favorite-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -123,6 +125,7 @@ ShallowWrapper {
                 <img
                   alt="full popcorn"
                   className="popcorn"
+                  className="favorite-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />,
@@ -150,6 +153,7 @@ ShallowWrapper {
                 "props": Object {
                   "alt": "full popcorn",
                   "className": "popcorn",
+                  "className": "favorite-icon",
                   "onClick": [Function],
                   "src": "../images/empty-popcorn.svg",
                 },
@@ -225,6 +229,7 @@ ShallowWrapper {
               <img
                 alt="full popcorn"
                 className="popcorn"
+                className="favorite-icon"
                 onClick={[Function]}
                 src="../images/empty-popcorn.svg"
               />
@@ -272,6 +277,7 @@ ShallowWrapper {
                 <img
                   alt="full popcorn"
                   className="popcorn"
+                  className="favorite-icon"
                   onClick={[Function]}
                   src="../images/empty-popcorn.svg"
                 />
@@ -302,6 +308,7 @@ ShallowWrapper {
                   <img
                     alt="full popcorn"
                     className="popcorn"
+                    className="favorite-icon"
                     onClick={[Function]}
                     src="../images/empty-popcorn.svg"
                   />,
@@ -329,6 +336,7 @@ ShallowWrapper {
                   "props": Object {
                     "alt": "full popcorn",
                     "className": "popcorn",
+                    "className": "favorite-icon",
                     "onClick": [Function],
                     "src": "../images/empty-popcorn.svg",
                   },

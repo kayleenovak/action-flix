@@ -4,6 +4,8 @@ import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
 import { connect } from 'react-redux'
 import './SignUp.css'
+import PropTypes from 'prop-types'
+
 
 export class SignUp extends Component {
   constructor() {
@@ -22,7 +24,7 @@ export class SignUp extends Component {
     this.setState({
       [name]: value
     }, () => this.enableButtons())
-}
+  }
 
 enableButtons = () => {
   if(this.state.showSignIn && this.state.email !== '' && this.state.password  !== '') {
@@ -34,7 +36,6 @@ enableButtons = () => {
       disableButton: false
     })
   }
-}
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -70,22 +71,45 @@ enableButtons = () => {
         <div className="inner-container">
           <article className="message-container">
             <h1>Welcome To Action Flix!</h1>
-            <h3>{popUpMessage}</h3>
+            <h3 className='popup-message'>{popUpMessage}</h3>
           </article>
           <form onSubmit={ this.handleSubmit }>
         {
           !showSignIn ? <input name="name" value={name} placeholder='Enter name ...' onChange={ this.handleChange } /> : ''
         }
-          <input name="email" value={email} placeholder='Enter email ...' onChange={ this.handleChange } className='email-input'/>
-          <input name="password"  type="password" value={password} placeholder='Enter password ...' onChange={ this.handleChange } />
+          <input name="email" value={email} placeholder='Email address' onChange={ this.handleChange } className='email-input'/>
+          <input name="password"  type="password" value={password} placeholder='Password' onChange={ this.handleChange } />
           <button className='submit-sign-up' disabled={this.state.disableButton} onClick={this.handleSubmit}>{signUpBtnName}</button>        
           <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
           { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
           </form> 
         </div>
+        <div className='login-side-page'>
+          <div className='side-page-text'>
+            <h2 className='login-page-title'>Action Flix</h2>
+            <h3 className='slogan'>Everything you need to know in one place.</h3>
+            <p className='description'>All-inclusive access to action films. Track your favorite movies. Stay up-to-date with new movies.</p>
+          </div>
+          <div className='circles-container'>
+            <div className='circle-five'></div>
+            <div className='circle-six'></div>
+            <div className='circle-two'></div>
+            <div className='circle-one'></div>
+            <div className='circle-four'></div>
+            <div className='circle-three'></div>
+            <div className='large-circle'></div>
+          </div>
+        </div>
       </div>
     )
   }
+}
+
+SignUp.propTypes = {
+  user: PropTypes.string.isRequired, 
+  hasErrored: PropTypes.bool.isRequired, 
+  checkUserLogin: PropTypes.func.isRequired, 
+  createNewUser: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({

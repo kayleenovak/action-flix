@@ -3,7 +3,7 @@
   display: flex;
   height: 300px;
   margin-bottom: 25px;
-  padding-right: 20px;
+  padding-right: 10px;
   width: 500px;
 }
 
@@ -20,6 +20,53 @@
 .movie-icon-container {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0 0 0;
+}
+
+.movie-rating-chart {
+  height: 50px;
+  padding-top: 5px;
+  width: 50px;
+}
+
+.outline-circle,
+.circle {
+  stroke-width: 3;
+}
+
+.outline-circle {
+  fill: #8E959C;
+  stroke: #fff;
+}
+
+.circle {
+  fill: none;
+  animation: progress 4s ease-out forwards;
+  stroke: #76E1EF;
+  stroke-linecap: round;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+
+  60% {
+    stroke-dasharray: 100 100;
+  }
+}
+
+.movie-rating {
+  font-size: 0.8rem;
+}
+
+.popcorn-icon {
+  height: 60px;
+}
+
+.movie-title, 
+.movie-release {
+  padding-left: 5px;
 }
 
 .movie-title {
@@ -34,10 +81,16 @@
 }
 
 .movie-description {
-  display: -webkit-box;
-  height: 125px;
-  overflow: hidden;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  border-radius: 10px;
+  cursor: default;
+  overflow: auto;
   width: 200px;
+  height: 100px;
+  transition: box-shadow 500ms;
+  padding: 5px;
 }
+
+.movie-description:hover {
+  box-shadow: inset 0 -45px 130px -55px rgba(0, 0, 0, 1);
+}
+
