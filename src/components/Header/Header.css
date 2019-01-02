@@ -5,6 +5,10 @@
   border-bottom: 6px solid #3D414C;
 }
 
+.header-title-navlink {
+  text-decoration: none;  
+}
+
 .header-title {
   color: #76E1EF;
   font-size: 4rem;

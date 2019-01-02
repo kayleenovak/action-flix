@@ -22,7 +22,7 @@ export class Header extends Component {
   render() {
     const notLoggedIn = (
       <header className='header'>
-        <h1 className='header-title'>Action Flix</h1>
+        <NavLink to='/' className='header-title-navlink' ><h1 className='header-title'>Action Flix</h1></NavLink>
         <NavLink to='/login'><button className='login-btn'>Login</button></NavLink>
       </header>   
     )

@@ -107,7 +107,7 @@ enableButtons = () => {
 }
 
 SignUp.propTypes = {
-  user: PropTypes.string.isRequired, 
+  user: PropTypes.number.isRequired, 
   hasErrored: PropTypes.bool.isRequired, 
   checkUserLogin: PropTypes.func.isRequired, 
   createNewUser: PropTypes.func.isRequired
