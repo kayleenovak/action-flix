@@ -15,4 +15,16 @@ describe('postFavorite', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true))
   })
+  it('should dispatch hasErrored(true) if the response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false, 
+      statusText: 'Unable to add favorite'
+    }))
+
+    const thunk = postFavorite(mockUrl)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))
+  })
 })
