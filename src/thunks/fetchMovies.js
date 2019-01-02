@@ -1,5 +1,5 @@
 import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
-import { cleanMovies } from '../cleaners/cleaners.js'
+import { cleanMovies } from '../cleaners/cleanMovies.js'
 import { getFavorites } from './getFavorites'
 
 export const fetchMovies = (url, userId) => {
