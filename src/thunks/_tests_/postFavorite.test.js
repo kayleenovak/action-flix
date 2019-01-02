@@ -27,4 +27,15 @@ describe('postFavorite', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))
   })
+  it('should dispatch isLoading(false) if the response is ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true
+    }))
+
+    const thunk = postFavorite(mockUrl)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
+  })
 })
