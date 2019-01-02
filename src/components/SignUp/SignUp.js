@@ -36,6 +36,7 @@ enableButtons = () => {
       disableButton: false
     })
   }
+}
 
   handleSubmit = (e) => {
     e.preventDefault()
