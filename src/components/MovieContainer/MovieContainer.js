@@ -14,14 +14,14 @@ export class MovieContainer extends Component {
 async componentDidMount() {
   let apiKey = movieDataBaseKey
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28`
-   await this.props.fetchMovies(url, this.props.userId)
+  await this.props.fetchMovies(url, this.props.userId)
 }
 
 render() {
   if (this.props.movies.length && this.props.location === '/') {
     const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} />))
     return (
-      <div className='movie-container'>
+      <div className='movie-container action-movies'>
         {actionMovies}
       </div>
     )
@@ -32,7 +32,7 @@ render() {
         return <MovieCard {...movie} />
       })
       return (
-        <div className='movie-container'>
+        <div className='movie-container favorite-movies'>
           {favoriteMovies}
         </div>
       )
