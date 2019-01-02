@@ -36,7 +36,6 @@ export class MovieCard extends Component {
         <img className='movie-img' src={this.props.posterPath} alt='movie poster' />
         <div className='movie-info-text'>
           <div className='movie-icon-container'>
-            <p className='movie-rating'>{this.props.voteAverage}</p>
             <svg className='movie-rating-chart' viewBox="0 0 36 36">
               <path className='outline-circle'
               d="M18 2.0845
