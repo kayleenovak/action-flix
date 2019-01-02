@@ -39,6 +39,16 @@ describe('MovieContainer', () => {
     })
   })
 
+  it('should render actionMovies when webpage is at home location', () => {
+    wrapper = shallow(<MovieContainer location='/' userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
+    expect(wrapper.find('div.actionMovies')).toBeDefined()
+  })
+
+  it('should render favoriteMovies when webpage is at favorites location', () => {
+    wrapper = shallow(<MovieContainer location='/favorites' userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
+    expect(wrapper.find('div.favoriteMovies')).toBeDefined()
+  })  
+
   describe('mapStateToProps', () => {
    it('should return an object with the keys of movies, isLoading, and hasErrored', () => {
      const mockState = {

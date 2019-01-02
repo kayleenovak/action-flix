@@ -21,7 +21,7 @@ render() {
   if (this.props.movies.length && this.props.location === '/') {
     const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} />))
     return (
-      <div className='movie-container'>
+      <div className='movie-container action-movies'>
         {actionMovies}
       </div>
     )
@@ -32,7 +32,7 @@ render() {
         return <MovieCard {...movie} />
       })
       return (
-        <div className='movie-container'>
+        <div className='movie-container favorite-movies'>
           {favoriteMovies}
         </div>
       )
