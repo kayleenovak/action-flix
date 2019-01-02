@@ -19,14 +19,14 @@ describe('signIn', () => {
         email: email,
         password: password
       })
-    }))    
+    }))
 
     const thunk = getUser(email, password)
 
     await thunk(mockDispatch)
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true))
-  })  
+  })
 
   it('should dispatch hasErrored with a message if the response is not ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -51,14 +51,14 @@ describe('signIn', () => {
           id: 1
         }
       })
-    })) 
+    }))
 
     const mockUserId = 1
 
-    const thunk = getUser(email, password) 
-    
+    const thunk = getUser(email, password)
+
     await thunk(mockDispatch)
 
-    expect(mockDispatch).toHaveBeenCalledWith(signIn(mockUserId))        
-  })    
+    expect(mockDispatch).toHaveBeenCalledWith(signIn(mockUserId))
+  })
 })

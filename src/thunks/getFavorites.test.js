@@ -14,8 +14,8 @@ describe('getFavorites', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve([
-        {title: 'Aquaman'},
-        {title: 'Captain America'}
+        { title: 'Aquaman' },
+        { title: 'Captain America' }
       ])
     }))
 
@@ -30,8 +30,8 @@ describe('getFavorites', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve([
-        {title: 'Aquaman'},
-        {title: 'Captain America'}
+        { title: 'Aquaman' },
+        { title: 'Captain America' }
       ])
     }))
 

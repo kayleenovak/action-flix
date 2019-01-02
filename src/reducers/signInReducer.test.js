@@ -37,4 +37,3 @@ describe('signInReducer', () => {
     expect(result).toEqual(expected)
   })
 })
-
