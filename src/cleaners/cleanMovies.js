@@ -1,12 +1,10 @@
-import { getFavorites } from '../thunks/getFavorites.js'
-
 export const cleanMovies = async (movies, favorites) => {
   const allMovies = movies.results.map(movie => {
     let favorite = false
     if (favorites) {
       favorites.forEach(favoriteMovie => {
         if (favoriteMovie.title === movie.title) {
-          favorite = true        
+          favorite = true
         }
       })
     }

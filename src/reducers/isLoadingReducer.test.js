@@ -1,5 +1,4 @@
 import { isLoadingReducer } from './isLoadingReducer'
-import * as actions from '../actions'
 
 describe('isLoadingReducer', () => {
   it('should return default state', () => {
@@ -11,7 +10,7 @@ describe('isLoadingReducer', () => {
   })
   it('should update state if request is loading', () => {
     const action = {
-      type: 'IS_LOADING', 
+      type: 'IS_LOADING',
       isLoading: true
     }
     const expected = true

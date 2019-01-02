@@ -15,7 +15,7 @@ export const createUser = (name, email, password) => {
       console.log(response)
       if (!response.ok) {
         dispatch(isLoading(false))
-        throw Error (response.statusText)
+        throw Error(response.statusText)
       }
       dispatch(isLoading(false))
       const user = await response.json()
@@ -24,6 +24,6 @@ export const createUser = (name, email, password) => {
     } catch (error) {
       console.log(error)
       dispatch(hasErrored(true))
-    } 
-  }  
+    }
+  }
 }

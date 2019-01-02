@@ -6,9 +6,9 @@ export const deleteFavorite = (userId, movieId) => {
     try {
       dispatch(isLoading(true))
       const response = await fetch(url, {
-        method: 'DELETE', 
+        method: 'DELETE',
         body: JSON.stringify({
-          user_id: userId, 
+          user_id: userId,
           movie_id: movieId
         }),
         headers: {
@@ -16,12 +16,11 @@ export const deleteFavorite = (userId, movieId) => {
         }
       })
 
-      if(!response.ok) {
+      if (!response.ok) {
         throw Error(response.statusText)
         dispatch(isLoading(false))
       }
       dispatch(isLoading(false))
-      
     } catch (error) {
       dispatch(hasErrored(true))
     }

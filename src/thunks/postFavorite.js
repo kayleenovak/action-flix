@@ -8,14 +8,14 @@ export const postFavorite = (movieId, userId, title, posterPath, releaseDate, vo
       dispatch(isLoading(true))
       const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           movie_id: movieId,
           user_id: userId,
           title: title,
           poster_path: posterPath,
           release_date: releaseDate,
           vote_average: voteAverage,
-          overview: overview  
+          overview: overview
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -26,7 +26,6 @@ export const postFavorite = (movieId, userId, title, posterPath, releaseDate, vo
         throw Error(response.statusText)
       }
       dispatch(isLoading(false))
-      const data = await response.json()
     } catch (error) {
       dispatch(hasErrored(true))
     }

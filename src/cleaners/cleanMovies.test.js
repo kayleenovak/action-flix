@@ -6,14 +6,14 @@ describe('cleaners', () => {
     it('should return a movie with the data we want', async () => {
       const mockMovie = movies
       const expected = {
-        movieId: 297802, 
-        posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`, 
-        title: mockMovie.results[0].title, 
+        movieId: 297802,
+        posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`,
+        title: mockMovie.results[0].title,
         voteAverage: mockMovie.results[0].vote_average,
-        releaseDate: mockMovie.results[0].release_date, 
+        releaseDate: mockMovie.results[0].release_date,
         overview: mockMovie.results[0].overview,
         favorite: false
-      } 
+      }
 
       const result = await cleanMovies(mockMovie)
 
@@ -24,24 +24,24 @@ describe('cleaners', () => {
       const mockMovie = movies
       const favorites = [
         {
-          movieId: 297802, 
-          posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`, 
-          title: mockMovie.results[0].title, 
+          movieId: 297802,
+          posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`,
+          title: mockMovie.results[0].title,
           voteAverage: mockMovie.results[0].vote_average,
-          releaseDate: mockMovie.results[0].release_date, 
+          releaseDate: mockMovie.results[0].release_date,
           overview: mockMovie.results[0].overview
         }
       ]
 
       const expected = {
-        movieId: 297802, 
-        posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`, 
-        title: mockMovie.results[0].title, 
+        movieId: 297802,
+        posterPath: `http://image.tmdb.org/t/p/w185/${mockMovie.results[0].poster_path}`,
+        title: mockMovie.results[0].title,
         voteAverage: mockMovie.results[0].vote_average,
-        releaseDate: mockMovie.results[0].release_date, 
+        releaseDate: mockMovie.results[0].release_date,
         overview: mockMovie.results[0].overview,
         favorite: true
-      } 
+      }
 
       const result = await cleanMovies(mockMovie, favorites)
 
