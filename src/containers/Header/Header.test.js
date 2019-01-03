@@ -10,7 +10,8 @@ describe('Header', () => {
   beforeEach(() => {
     mockLogOut = jest.fn()
     const mockUser = 1
-    wrapper = shallow(<Header resetFavorites={ jest.fn() } logUserOut={ mockLogOut } user={mockUser} />)
+    const mockHistory = []
+    wrapper = shallow(<Header history={mockHistory} resetFavorites={ jest.fn() } logUserOut={ mockLogOut } user={mockUser} />)
   })
 
   it('should match the snapshot', () => {

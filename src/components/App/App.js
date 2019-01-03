@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import SignUp from '../SignUp/SignUp'
+import SignUp from '../../containers/SignUp/SignUp'
 import './App.css';
 import { Route } from 'react-router-dom'
 import { NoMatch } from '../NoMatch/NoMatch'
-import  MovieContainer  from '../MovieContainer/MovieContainer'
-import Header from '../Header/Header'; 
+import  MovieContainer  from '../../containers/MovieContainer/MovieContainer'
+import Header from '../../containers/Header/Header'; 
 
 
 export class App extends Component {

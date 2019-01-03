@@ -8,7 +8,8 @@
       "src/cleaners/*.js",
       "src/components/**/*.js",
       "src/reducers/*Reducer.js",
-      "src/thunks/*.js"
+      "src/thunks/*.js",
+      "src/containers/**/*.js"
     ]
   },
   "dependencies": {
