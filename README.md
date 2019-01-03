@@ -27,7 +27,7 @@
 ![image](https://user-images.githubusercontent.com/39439089/50122566-59c50480-021a-11e9-9597-cb75e7f47cee.png)
 
 ## Screenshots
-![login] (public/images/login-page.png)
-![home] (public/images/home-page.png)
+![login](public/images/login-page.png)
+![home](public/images/home-page.png)
 
 
