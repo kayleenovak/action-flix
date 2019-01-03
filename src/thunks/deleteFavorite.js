@@ -17,8 +17,8 @@ export const deleteFavorite = (userId, movieId) => {
       })
 
       if (!response.ok) {
-        throw Error(response.statusText)
         dispatch(isLoading(false))
+        throw Error(response.statusText)
       }
       dispatch(isLoading(false))
     } catch (error) {
