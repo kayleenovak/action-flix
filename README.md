@@ -28,4 +28,6 @@
 
 ## Screenshots
 ![our app]
-(file:///Users/PORTILLO/Downloads/screencast-localhost-3001-2019.01.03-09-13-34.webm)
+<video width="320" height="240" controls>
+  <source src="file:///Users/PORTILLO/Downloads/screencast-localhost-3001-2019.01.03-09-13-34.webm" type="video">
+</video>
