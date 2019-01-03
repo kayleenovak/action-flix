@@ -9,6 +9,10 @@ describe('postFavorite', () => {
     mockDispatch = jest.fn()
   })
   it('calls dispatch with isLoading action', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true
+    }))
+    
     const thunk = postFavorite(mockUrl)
 
     await thunk(mockDispatch)

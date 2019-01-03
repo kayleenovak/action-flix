@@ -40,4 +40,17 @@ describe('deleteFavorite', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))
   })
+
+  it('should dispatch isLoading(false) if the response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'there\'s been a fetch error'
+    }))
+
+    const thunk = deleteFavorite(mockUserId, mockMovieId)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
+  })
 })

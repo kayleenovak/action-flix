@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { MovieContainer, mapStateToProps, mapDispatchToProps } from './MovieContainer';
 import { fetchMovies } from '../../thunks/fetchMovies.js';
+import { MovieCard } from '../MovieCard/MovieCard'
 import { movieDataBaseKey }  from '../../../src/constants.js'
 
 describe('MovieContainer', () => {
@@ -41,12 +42,14 @@ describe('MovieContainer', () => {
 
   it('should render actionMovies when webpage is at home location', () => {
     wrapper = shallow(<MovieContainer location='/' getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
-    expect(wrapper.find('div.actionMovies')).toBeDefined()
+    expect(wrapper.find('.action-movies').length).toBe(1)
   })
 
   it('should render favoriteMovies when webpage is at favorites location', () => {
+    const mockMovies = [{name: 'Aquaman', favorite: true}, {name: 'Captain America', favorite: true}]
     wrapper = shallow(<MovieContainer location='/favorites' getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
-    expect(wrapper.find('div.favoriteMovies')).toBeDefined()
+    
+    expect(wrapper.find('.favorite-movies').length).toBe(1)
   })  
 
   describe('mapStateToProps', () => {
@@ -75,6 +78,15 @@ describe('MovieContainer', () => {
      const mockUrl = 'www.getthemovies.com'
 
      mappedProps.fetchMovies(mockUrl)
+
+     expect(mockDispatch).toHaveBeenCalled
+   })
+
+   it('should call dispatch with the correct params', () => {
+     const mappedProps = mapDispatchToProps(mockDispatch)
+     const mockId = 1
+
+     mappedProps.getFavorites(mockId)
 
      expect(mockDispatch).toHaveBeenCalled
    })

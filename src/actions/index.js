@@ -16,7 +16,7 @@ export const fetchDataSuccess = (movies) => ({
 export const signIn = (id, name, userName) => ({
   type: 'SIGN_IN',
   id,
-  name, 
+  name,
   userName
 })
 

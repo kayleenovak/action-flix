@@ -30,7 +30,7 @@ export class MovieCard extends Component {
   }
 
   render() {
-   let favoriteIcon = this.props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
+   const favoriteIcon = this.props.favorite ? '../images/full-popcorn.svg' : '../images/empty-popcorn.svg'
     return (
       <article className='movie-card'>
         <img className='movie-img' src={this.props.posterPath} alt='movie poster' />
