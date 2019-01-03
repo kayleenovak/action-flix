@@ -23,7 +23,7 @@ describe('signInReducer', () => {
     const id = 4
     const expected = id
 
-    const result = signInReducer('', actions.newUser(id))
+    const result = signInReducer('', actions.signIn(id))
 
     expect(result).toEqual(expected)
   })

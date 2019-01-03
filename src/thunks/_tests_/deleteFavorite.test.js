@@ -1,5 +1,5 @@
-import { deleteFavorite } from './deleteFavorite'
-import { isLoading, hasErrored } from './../actions'
+import { deleteFavorite } from '../deleteFavorite'
+import { isLoading, hasErrored } from '../../actions'
 
 describe('deleteFavorite', () => {
   let mockDispatch

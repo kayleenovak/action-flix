@@ -6,7 +6,30 @@ describe('MovieCard', () => {
   it('should match the snapshot', () => {
     let mockMovies = [{title: 'Aquaman'}, {title: 'Transformers'}]
     let mockUser = 1
-    const wrapper = shallow(<MovieCard movies={mockMovies} userId={mockUser} />)
+    let mockMovieId = 1
+    const mockTitle = 'Aquaman'
+    const mockPosterPath = 'www.thismovie.com'
+    const mockReleaseDate = '12/12/18'
+    const mockVoteAverage = 7.5
+    const mockOverview = 'About this movie'
+    const mockHistory = []
+    const mockFavorite = false
+    const mockAddFavorite = jest.fn()
+    const mockDeleteFavorite = jest.fn()
+    const mockToggleFavorite = jest.fn()
+    const wrapper = shallow(<MovieCard 
+                              movies={mockMovies} 
+                              userId={mockUser} 
+                              movieId={mockMovieId} 
+                              title={mockTitle} 
+                              posterPath={mockPosterPath} 
+                              releaseDate={mockReleaseDate} 
+                              voteAverage={mockVoteAverage} 
+                              overview={mockOverview} 
+                              addFavorite={mockAddFavorite} 
+                              deleteFavorite={mockDeleteFavorite} 
+                              toggleFavorite={mockToggleFavorite} 
+                            />)
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -81,7 +104,20 @@ describe('MovieCard', () => {
                           deleteFavorite={mockDeleteFavorite} 
                           toggleFavorite={mockToggleFavorite} 
                         />)
-      noUserWrapper = shallow(<MovieCard userId='' history={mockHistory} />)
+      noUserWrapper = shallow(<MovieCard 
+                                movies={mockMovies}                                 
+                                userId='' 
+                                history={mockHistory} 
+                                movieId={mockMovieId} 
+                                title={mockTitle} 
+                                posterPath={mockPosterPath} 
+                                releaseDate={mockReleaseDate} 
+                                voteAverage={mockVoteAverage} 
+                                overview={mockOverview} 
+                                addFavorite={mockAddFavorite} 
+                                deleteFavorite={mockDeleteFavorite} 
+                                toggleFavorite={mockToggleFavorite}
+                              />)
       favoriteWrapper = shallow(<MovieCard 
                           movies={mockFavoriteMovies} 
                           userId={mockUser} 
@@ -99,13 +135,13 @@ describe('MovieCard', () => {
     })
 
     it('should invoke checkSignedIn when the favorite', () => {
-      wrapper.find('.popcorn').simulate('click')
+      wrapper.find('.popcorn-icon').simulate('click')
 
       expect(wrapper.checkSignedIn).toHaveBeenCalled
     })
 
     it('should render an empty popcorn svg if the favorite is false', () => {
-      const popcornImage = wrapper.find('.popcorn')
+      const popcornImage = wrapper.find('.popcorn-icon')
 
       expect(popcornImage.prop('src')).toEqual('../images/empty-popcorn.svg')
     })

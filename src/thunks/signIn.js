@@ -17,8 +17,9 @@ export const getUser = (email, password) => {
       }
       dispatch(isLoading(false))
       const user = await response.json()
-      dispatch(signIn(user.data.id))
+      dispatch(signIn(user.data.id, user.data.name))
     } catch (error) {
+      console.log(error)
       dispatch(hasErrored(true))
     }
   }

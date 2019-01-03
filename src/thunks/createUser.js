@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, newUser } from '../actions/index.js'
+import { isLoading, hasErrored, signIn } from '../actions/index.js'
 
 export const createUser = (name, email, password) => {
   const url = 'http://localhost:3000/api/users/new'
@@ -12,17 +12,14 @@ export const createUser = (name, email, password) => {
           'Content-Type': 'application/json'
         }
       })
-      console.log(response)
       if (!response.ok) {
         dispatch(isLoading(false))
         throw Error(response.statusText)
       }
       dispatch(isLoading(false))
       const user = await response.json()
-      console.log(user)
-      dispatch(newUser(user.id))
+      dispatch(signIn(user.id, name))
     } catch (error) {
-      console.log(error)
       dispatch(hasErrored(true))
     }
   }

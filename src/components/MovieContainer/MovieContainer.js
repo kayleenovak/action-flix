@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import uuid from 'uuid'
 import MovieCard from '../MovieCard/MovieCard'
 import './MovieContainer.css'
 import { connect } from 'react-redux'
@@ -19,7 +19,7 @@ async componentDidMount() {
 
 render() {
   if (this.props.movies.length && this.props.location === '/') {
-    const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} />))
+    const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} key={uuid()} />))
     return (
       <div className='movie-container action-movies'>
         {actionMovies}
@@ -27,9 +27,9 @@ render() {
     )
   } else if (this.props.movies.length && this.props.location === '/favorites') {
       const favoriteMovies = this.props.movies.filter(movie => {
-        return movie.favorite === 'true'
+        return movie.favorite === true
       }).map(movie => {
-        return <MovieCard {...movie} />
+        return <MovieCard {...movie} key={uuid()} />
       })
       return (
         <div className='movie-container favorite-movies'>
@@ -46,7 +46,7 @@ render() {
 MovieContainer.propTypes = {
   fetchMovies: PropTypes.func.isRequired, 
   getFavorites: PropTypes.func.isRequired, 
-  userId: PropTypes.string.isRequired, 
+  userId: PropTypes.number.isRequired, 
   isLoading: PropTypes.bool.isRequired, 
   hasErrored: PropTypes.bool.isRequired, 
   movies: PropTypes.array.isRequired

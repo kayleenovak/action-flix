@@ -1,7 +1,7 @@
 import React from 'react'
 import './MovieCard.css'
 import { Component } from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postFavorite } from '../../thunks/postFavorite.js'
 import { deleteFavorite } from '../../thunks/deleteFavorite.js'
@@ -36,7 +36,6 @@ export class MovieCard extends Component {
         <img className='movie-img' src={this.props.posterPath} alt='movie poster' />
         <div className='movie-info-text'>
           <div className='movie-icon-container'>
-            <p className='movie-rating'>{this.props.voteAverage}</p>
             <svg className='movie-rating-chart' viewBox="0 0 36 36">
               <path className='outline-circle'
               d="M18 2.0845
@@ -70,7 +69,7 @@ MovieCard.propTypes = {
   toggleFavorite: PropTypes.func.isRequired, 
   deleteFavorite: PropTypes.func.isRequired,
   movies: PropTypes.array.isRequired, 
-  userId: PropTypes.string.isRequired
+  userId: PropTypes.number
 }
 
 
@@ -93,3 +92,4 @@ export const mapStateToProps = (state, props) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MovieCard))
+

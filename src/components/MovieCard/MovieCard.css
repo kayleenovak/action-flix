@@ -20,12 +20,12 @@
 .movie-icon-container {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0 0 0;
+  padding-bottom: 5px;
 }
 
 .movie-rating-chart {
   height: 50px;
-  padding-top: 5px;
+  padding-top: 12px;
   width: 50px;
 }
 
@@ -61,7 +61,8 @@
 }
 
 .popcorn-icon {
-  height: 60px;
+  height: 50px;
+  align-self: flex-end;
 }
 
 .movie-title, 
