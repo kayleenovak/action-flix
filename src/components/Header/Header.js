@@ -34,13 +34,14 @@ export class Header extends Component {
         <h1 className='header-title'>Action Flix</h1>
           <div className='dropdown-wrapper'>
             <div className='dropdown-header'>
-              <div className='dropdown-title'>
-                <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello {this.props.name}</h3>
+              <div className='dropdown-title' onClick={() => this.toggleList()}>
+                <h3 className='welcome-user'>Hello {this.props.name}</h3>
                 <img className='arrow-icon' src={arrowIcon} alt='down arrow' />
               </div>
             </div>
             { !this.state.listOpen ?  null : 
               <article className='dropdown-list'>
+                <NavLink to='/'><button className='home-btn'>Home</button></NavLink>
                 <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
                 <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
               </article>
