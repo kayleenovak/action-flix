@@ -78,6 +78,7 @@ input:-webkit-autofill:active  {
   font-size: 17px;
   margin-bottom: 0px;
   outline: none;
+  cursor: pointer;
 }
 
 .submit-sign-up:hover {
@@ -90,6 +91,7 @@ input:-webkit-autofill:active  {
   font-size: 12px;
   margin-top: 0px;
   outline: none;
+  cursor: pointer;
 }
 
 .signin-toggle:hover {

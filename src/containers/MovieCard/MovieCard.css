@@ -63,6 +63,7 @@
 .popcorn-icon {
   height: 50px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .movie-title, 
