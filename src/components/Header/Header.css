@@ -58,18 +58,13 @@
 }
 
 .favorites-btn:hover,
-.home-btn:hover,
+.home-btn:dhover,
 .logout-btn:hover {
   color: #76E1EF;
   text-shadow: 1px 1px #3D414C;
   cursor: pointer;
   text-decoration: underline;
 } 
-
-.active {
-  color: #8E959C;
-  text-decoration: underline;
-}
 
 .arrow-icon {
   height: 10px;

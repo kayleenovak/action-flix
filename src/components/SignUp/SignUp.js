@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
+import { hasErrored } from '../../actions'
 import { connect } from 'react-redux'
 import './SignUp.css'
 import PropTypes from 'prop-types'
@@ -57,6 +58,7 @@ enableButtons = () => {
   handleSignUp = (e) => {
     e.preventDefault()
     this.setState({showSignIn: !this.state.showSignIn})
+    this.props.errorAction(false)
   }
 
   render() {
@@ -120,7 +122,8 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   checkUserLogin: (email, password) => dispatch(getUser(email, password)),
-  createNewUser: (name, email, password) => dispatch(createUser(name, email, password))
+  createNewUser: (name, email, password) => dispatch(createUser(name, email, password)),
+  errorAction: (bool) => dispatch(hasErrored(bool))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

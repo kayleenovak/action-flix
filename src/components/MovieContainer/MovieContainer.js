@@ -27,7 +27,7 @@ render() {
     )
   } else if (this.props.movies.length && this.props.location === '/favorites') {
       const favoriteMovies = this.props.movies.filter(movie => {
-        return movie.favorite === 'true'
+        return movie.favorite === true
       }).map(movie => {
         return <MovieCard {...movie} key={uuid()} />
       })
