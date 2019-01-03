@@ -19,11 +19,6 @@ export class Header extends Component {
     })
   }
 
-  handleLogOut = () => {
-    this.toggleList()
-    this.props.logUserOut()
-  }
-
   render() {
     const arrowIcon = this.state.listOpen ? '../images/up-arrow.svg' : '../images/down-arrow.svg'
 
@@ -48,7 +43,7 @@ export class Header extends Component {
               <article className='dropdown-list'>
                 <NavLink to='/'><button className='home-btn'>Home</button></NavLink>
                 <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
-                <button className='logout-btn' onClick={() => this.handleLogOut()}>Sign Out</button>
+                <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
               </article>
               
             }
