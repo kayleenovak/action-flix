@@ -22,6 +22,7 @@ export class Header extends Component {
   }
 
   handleLogOut = () => {
+    this.toggleList()
     this.props.logUserOut()
     this.props.resetFavorites()
     this.props.history.push('/')
