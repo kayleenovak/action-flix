@@ -12,6 +12,10 @@ describe('createUser', () => {
     mockDispatch = jest.fn()
   })
   it('calls dispatch with isLoading action', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true
+    }))
+
     const thunk = createUser(mockUrl)
 
     await thunk(mockDispatch)

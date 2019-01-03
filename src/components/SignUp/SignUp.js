@@ -84,7 +84,7 @@ enableButtons = () => {
           <input name="password"  type="password" value={password} placeholder='Password' onChange={ this.handleChange } />
           <button className='submit-sign-up' disabled={this.state.disableButton} onClick={this.handleSubmit}>{signUpBtnName}</button>        
           <button className='signin-toggle' onClick={this.handleSignUp}>{newUserBtnName}</button>
-          { this.props.hasErrored ? <h3>{errorMessage}</h3> : undefined }
+          { this.props.hasErrored ? <h3 className='error-message'>{errorMessage}</h3> : undefined }
           </form> 
         </div>
         <div className='login-side-page'>

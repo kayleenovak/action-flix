@@ -78,5 +78,14 @@ describe('MovieContainer', () => {
 
      expect(mockDispatch).toHaveBeenCalled
    })
+
+   it('should call dispatch with the correct params', () => {
+     const mappedProps = mapDispatchToProps(mockDispatch)
+     const mockId = 1
+
+     mappedProps.getFavorites(mockId)
+
+     expect(mockDispatch).toHaveBeenCalled
+   })
  })
 })

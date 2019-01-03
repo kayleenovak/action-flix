@@ -125,6 +125,11 @@ describe('SignUp', () => {
     })
 
     it('should invoke handleSubmit on click of signIn button', () => {
+      const wrapper = shallow(<SignUp user={-0} hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      
+      wrapper.setState({
+        disableButton: false
+      })
       wrapper.find('.submit-sign-up').simulate('click', mockEvent)
 
       expect(wrapper.handleSubmit).toHaveBeenCalled
@@ -173,7 +178,7 @@ describe('SignUp', () => {
       }
       const mockLogin = jest.fn()
       const mockCreateUser = jest.fn()
-      const wrapper = shallow(<SignUp user={userId} hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      const wrapper = shallow(<SignUp user={1} errorAction={ jest.fn() } hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
       const mockState = {
         name: '',
         email: '',
@@ -200,24 +205,26 @@ describe('SignUp', () => {
     let mockLogin
     let mockCreateUser
     let wrapper
+    let mockUser
 
     beforeEach(() => {
       mockEvent = {
         target: {},
         preventDefault: () => {}
       }
+      mockUser = 1
       mockLogin = jest.fn()
       mockCreateUser = jest.fn()
-      wrapper = shallow(<SignUp user={userId} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      wrapper = shallow(<SignUp user={-0} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } errorAction={ jest.fn() }/>)
     })
 
     it('should render an h3 if this.props.hasErrored is true', () => {
 
-      expect(wrapper.find('h3').length).toBe(3)
+      expect(wrapper.find('.error-message').length).toBe(1)
     })
 
     it('should return a Redirect if this.props.user', () => {
-      const wrapper = shallow(<SignUp user={userId} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      const wrapper = shallow(<SignUp user={mockUser} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } errorAction={ jest.fn() }/>)
 
       expect(wrapper.find(Redirect).length).toBe(1)
     })
