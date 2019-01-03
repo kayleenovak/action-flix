@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'
-import { logOut } from '../../actions/index.js'
+import { logOut, resetFavorites } from '../../actions/index.js'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
 import PropTypes from 'prop-types'
@@ -17,6 +17,11 @@ export class Header extends Component {
     this.setState({
       listOpen: !this.state.listOpen
     })
+  }
+
+  handleLogOut = () => {
+    this.props.logUserOut()
+    this.props.resetFavorites()
   }
 
   render() {
@@ -43,7 +48,7 @@ export class Header extends Component {
               <article className='dropdown-list'>
                 <NavLink to='/'><button className='home-btn'>Home</button></NavLink>
                 <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
-                <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
+                <button className='logout-btn' onClick={() => this.handleLogOut()}>Sign Out</button>
               </article>
               
             }
@@ -70,7 +75,8 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  logUserOut: () => dispatch(logOut())
+  logUserOut: () => dispatch(logOut()),
+  resetFavorites: () => dispatch(resetFavorites())
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)
