@@ -45,11 +45,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "error",
+      "children": "404 Error",
+      "className": "server-error",
     },
     "ref": null,
-    "rendered": "error",
-    "type": "div",
+    "rendered": "404 Error",
+    "type": "h3",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -57,11 +58,12 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "error",
+        "children": "404 Error",
+        "className": "server-error",
       },
       "ref": null,
-      "rendered": "error",
-      "type": "div",
+      "rendered": "404 Error",
+      "type": "h3",
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -19,24 +19,26 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(withRouter(Header)) />,
-        <Route
-          exact={true}
-          path="/"
-          render={[Function]}
-        />,
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/login"
-        />,
-        <Route
-          exact={true}
-          path="/favorites"
-          render={[Function]}
-        />,
-        <Route
-          component={[Function]}
-        />,
+        <Switch>
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/login"
+          />
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
+          />
+          <Route
+            component={[Function]}
+          />
+        </Switch>,
       ],
       "className": "App",
     },
@@ -56,49 +58,80 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "exact": true,
-          "path": "/",
-          "render": [Function],
+          "children": Array [
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/login"
+            />,
+            <Route
+              exact={true}
+              path="/favorites"
+              render={[Function]}
+            />,
+            <Route
+              component={[Function]}
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "exact": true,
-          "path": "/login",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "exact": true,
-          "path": "/favorites",
-          "render": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-        },
-        "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/login",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -112,24 +145,26 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(withRouter(Header)) />,
-          <Route
-            exact={true}
-            path="/"
-            render={[Function]}
-          />,
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/login"
-          />,
-          <Route
-            exact={true}
-            path="/favorites"
-            render={[Function]}
-          />,
-          <Route
-            component={[Function]}
-          />,
+          <Switch>
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+            />
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/login"
+            />
+            <Route
+              exact={true}
+              path="/favorites"
+              render={[Function]}
+            />
+            <Route
+              component={[Function]}
+            />
+          </Switch>,
         ],
         "className": "App",
       },
@@ -149,49 +184,80 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "exact": true,
-            "path": "/",
-            "render": [Function],
+            "children": Array [
+              <Route
+                exact={true}
+                path="/"
+                render={[Function]}
+              />,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/login"
+              />,
+              <Route
+                exact={true}
+                path="/favorites"
+                render={[Function]}
+              />,
+              <Route
+                component={[Function]}
+              />,
+            ],
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "exact": true,
-            "path": "/login",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/favorites",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-          },
-          "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/login",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/favorites",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],
