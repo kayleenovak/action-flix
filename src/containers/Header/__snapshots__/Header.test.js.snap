@@ -4,7 +4,9 @@ exports[`Header should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
+    history={Array []}
     logUserOut={[MockFunction]}
+    resetFavorites={[MockFunction]}
     user={1}
   />,
   Symbol(enzyme.__renderer__): Object {

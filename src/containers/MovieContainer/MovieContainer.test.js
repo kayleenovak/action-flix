@@ -21,15 +21,32 @@ describe('MovieContainer', () => {
     mockDispatch = jest.fn()
     mockMovies = [{name: 'Aquaman'}]
     userId = 1
-    wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
+    wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch } />)
   })
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should render an empty div if there are no movies in props', () => {
-    expect(wrapper.find('div').length).toEqual(1)
+  it('should render a no favorites message if there are no favorite movies on favorites page in props', () => {
+    const mockMovies = []
+    const wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={ userId } movies={ mockMovies } isLoading={ false } hasErrored={ true } fetchMovies={ mockFetch } location={ '/favorites' } />)
+
+    expect(wrapper.find('section').length).toEqual(1)
+  })
+
+  it('should render a 404 error if there are no movies in props', () => {
+    const mockMovies = []
+    const wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={ userId } movies={ mockMovies } isLoading={ false } hasErrored={ true } fetchMovies={ mockFetch } />)
+
+    expect(wrapper.find('h3').length).toEqual(1)
+  })
+
+  it('should render a loading message if there are no movies in props', () => {
+    const mockMovies = []
+    const wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={ userId } movies={ mockMovies } isLoading={ true } hasErrored={ false } fetchMovies={ mockFetch } />)
+
+    expect(wrapper.find('h1').length).toEqual(1)
   })
 
   describe('componentDidMount', () => {

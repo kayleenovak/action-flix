@@ -10,7 +10,8 @@ describe('Header', () => {
   beforeEach(() => {
     mockLogOut = jest.fn()
     const mockUser = 1
-    wrapper = shallow(<Header logUserOut={ mockLogOut } user={mockUser} />)
+    const mockHistory = []
+    wrapper = shallow(<Header history={mockHistory} resetFavorites={ jest.fn() } logUserOut={ mockLogOut } user={mockUser} />)
   })
 
   it('should match the snapshot', () => {
@@ -21,6 +22,7 @@ describe('Header', () => {
   it('should handle a click event', () => {
     wrapper.setState({listOpen: true})
     wrapper.find('.logout-btn').simulate('click')
+    
     expect(mockLogOut).toHaveBeenCalled
   })
 
@@ -55,6 +57,19 @@ describe('Header', () => {
 
       const mappedProps = mapDispatchToProps(mockDispatch)
       mappedProps.logUserOut()
+
+      expect(mockDispatch).toHaveBeenCalledWith(expected)
+
+    })
+
+    it('should call dispatch on resetFavorites with the correct params', () => {
+      const mockDispatch = jest.fn() 
+      const expected = {
+        type: 'RESET_FAVORITES'
+      }
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.resetFavorites()
 
       expect(mockDispatch).toHaveBeenCalledWith(expected)
 

@@ -10,6 +10,12 @@ export const moviesReducer = (state = [], action) => {
         return movie
       })
       return newState
+    case 'RESET_FAVORITES':
+      const updatedState = state.map(movie => {
+        movie.favorite = false
+        return movie
+      })
+      return updatedState
     default:
       return state
   }

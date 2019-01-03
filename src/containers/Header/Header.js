@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'
-import { logOut } from '../../actions/index.js'
+import { withRouter } from 'react-router-dom'
+import { logOut, resetFavorites } from '../../actions/index.js'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
 import PropTypes from 'prop-types'
@@ -9,7 +10,8 @@ export class Header extends Component {
   constructor() {
     super()
     this.state = {
-      listOpen: false
+      listOpen: false,
+      redirectHome: false
     }
   }
 
@@ -19,7 +21,14 @@ export class Header extends Component {
     })
   }
 
+  handleLogOut = () => {
+    this.props.logUserOut()
+    this.props.resetFavorites()
+    this.props.history.push('/')
+  }
+
   render() {
+
     const arrowIcon = this.state.listOpen ? '../images/up-arrow.svg' : '../images/down-arrow.svg'
 
     const notLoggedIn = (
@@ -43,7 +52,7 @@ export class Header extends Component {
               <article className='dropdown-list'>
                 <NavLink to='/'><button className='home-btn'>Home</button></NavLink>
                 <NavLink to='/favorites'><button className='favorites-btn'>Favorites</button></NavLink>
-                <button className='logout-btn' onClick={() => this.props.logUserOut()}>Sign Out</button>
+                <button className='logout-btn' onClick={() => this.handleLogOut()}>Sign Out</button>
               </article>
               
             }
@@ -70,9 +79,10 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  logUserOut: () => dispatch(logOut())
+  logUserOut: () => dispatch(logOut()),
+  resetFavorites: () => dispatch(resetFavorites())
 }) 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header))
 
   

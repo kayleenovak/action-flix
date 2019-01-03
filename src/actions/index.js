@@ -24,6 +24,10 @@ export const logOut = () => ({
   type: 'LOG_OUT'
 })
 
+export const resetFavorites = () => ({
+  type: 'RESET_FAVORITES'
+})
+
 export const toggleFavorite = (movieTitle) => ({
   type: 'TOGGLE_FAVORITE',
   movieTitle
