@@ -24,6 +24,28 @@ describe('Header', () => {
     expect(mockLogOut).toHaveBeenCalled
   })
 
+  it('should setState once toggleList has been invoked', async () => {
+    wrapper.instance().toggleList()
+
+    expect(wrapper.state().listOpen).toEqual(true)
+  })
+
+  it('should invoke toggleList on click of the user name', () => {
+    wrapper.find('.dropdown-title').simulate('click')
+
+    expect(wrapper.toggleList).toHaveBeenCalled
+  })
+
+  it('should return notLogged in if this.props.user does not exist', () => {
+    const wrapper = shallow(<Header logUserOut={ mockLogOut } user='' />)
+
+    expect(wrapper.find('div').length).toBe(0)
+  })
+
+  it('should return notLogged in if this.props.user does not exist', () => {
+    expect(wrapper.find('div').length).toBe(3)
+  })
+
   describe('mapDispatchToProps', () => {
     it('should call dispatch on logUserOut with the correct params', () => {
       const mockDispatch = jest.fn() 
