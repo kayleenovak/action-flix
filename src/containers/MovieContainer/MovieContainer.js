@@ -18,6 +18,12 @@ async componentDidMount() {
 }
 
 render() {
+  const favoriteMovies = this.props.movies.filter(movie => {
+      return movie.favorite === true
+    }).map(movie => {
+      return <MovieCard {...movie} key={uuid()} />
+    })
+
   if (this.props.movies.length && this.props.location === '/') {
     const actionMovies = this.props.movies.map(movie => (<MovieCard {...movie} key={uuid()} />))
     return (
@@ -25,21 +31,24 @@ render() {
         {actionMovies}
       </div>
     )
-  } else if (this.props.movies.length && this.props.location === '/favorites') {
-      const favoriteMovies = this.props.movies.filter(movie => {
-        return movie.favorite === true
-      }).map(movie => {
-        return <MovieCard {...movie} key={uuid()} />
-      })
-      return (
-        <div className='movie-container favorite-movies'>
-          {favoriteMovies}
-        </div>
-      )
-    } 
-    else {
-      return <div>{'error'}</div>
-    }
+  } else if (favoriteMovies.length > 0 && this.props.location === '/favorites') {
+    return (
+      <div className='movie-container favorite-movies'>
+        {favoriteMovies}
+      </div>
+    )
+  } else if (favoriteMovies.length === 0 && this.props.location === '/favorites') {
+    return (
+      <section className='favorites-error'>
+        <h3>Sorry, you have no favorites!</h3>
+        <p>Please return to the homepage to add movies to your favorites</p>
+      </section>
+    )
+  } else if (this.props.isLoading) {
+    return <h1 className='loading'>Loading...</h1>
+  } else {
+    return <h3 className='server-error'>404 Error</h3>
+  }
   }
 }
 
