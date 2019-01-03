@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { logOut, resetFavorites } from '../../actions/index.js'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
@@ -9,7 +10,8 @@ export class Header extends Component {
   constructor() {
     super()
     this.state = {
-      listOpen: false
+      listOpen: false,
+      redirectHome: false
     }
   }
 
@@ -22,9 +24,11 @@ export class Header extends Component {
   handleLogOut = () => {
     this.props.logUserOut()
     this.props.resetFavorites()
+    this.props.history.push('/')
   }
 
   render() {
+
     const arrowIcon = this.state.listOpen ? '../images/up-arrow.svg' : '../images/down-arrow.svg'
 
     const notLoggedIn = (
@@ -79,6 +83,6 @@ export const mapDispatchToProps = (dispatch) => ({
   resetFavorites: () => dispatch(resetFavorites())
 }) 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header))
 
   
