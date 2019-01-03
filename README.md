@@ -27,5 +27,5 @@
 ![image](https://user-images.githubusercontent.com/39439089/50122566-59c50480-021a-11e9-9597-cb75e7f47cee.png)
 
 ## Screenshots
-[![our app](file:///Users/PORTILLO/Downloads/screencast-localhost-3001-2019.01.03-09-13-34.webm)](file:///Users/PORTILLO/Downloads/screencast-localhost-3001-2019.01.03-09-13-34.webm)
+![our app](file:///Users/PORTILLO/Downloads/screencast-localhost-3001-2019.01.03-09-13-34.webm)
 
