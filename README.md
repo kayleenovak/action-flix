@@ -1,11 +1,17 @@
 # Action Flix
 
 ## Set Up
-
+ - Make a directory for this project
+ - cd into the directory
  - Clone down this repo, run `git clone https://github.com/Dhanciles/action-flix.git`
+ - Clone down the backend repo, run `git clone https://github.com/turingschool-examples/movie-tracker.git`
+ - cd into the backend directory
  - Run `npm install` in your terminal
  - Run `npm start` in your terminal
- - Open http://localhost:3000 in your browser
+ - cd into the action-flix directory
+ - Run `npm install` in your terminal
+ - Run `npm start` in your terminal
+ - When asked if you would like to open in another port, type `y` in your terminal and press enter
  
  ## Stack
   - React
