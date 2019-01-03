@@ -36,4 +36,13 @@ describe('moviesReducer', () => {
 
     expect(result[0].favorite).toEqual(true)
   })
+
+  it('should update state with movies requested if our fetch request is successful', () => {
+    const mockMovies = [{title: 'Aquaman', favorite: true}]
+    const expected = [{title: 'Aquaman', favorite: false}]
+
+    const result = moviesReducer(mockMovies, actions.resetFavorites())
+
+    expect(result).toEqual(expected)
+  })
 })

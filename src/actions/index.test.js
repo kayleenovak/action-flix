@@ -70,4 +70,14 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of RESET_FAVORITES', () => {
+    const expected = {
+      type: 'RESET_FAVORITES'
+    }
+
+    const result = actions.resetFavorites()
+
+    expect(result).toEqual(expected)
+  })
 })
