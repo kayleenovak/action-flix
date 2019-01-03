@@ -1,6 +1,5 @@
 import { getUserNameReducer } from './getUserNameReducer'
 import * as actions from '../actions'
-import { getMaxListeners } from 'cluster';
 
 
 describe('getUserNameReducer', () => {
