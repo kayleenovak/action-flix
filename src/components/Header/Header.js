@@ -20,6 +20,8 @@ export class Header extends Component {
   }
 
   render() {
+    const arrowIcon = this.state.listOpen ? '../images/up-arrow.svg' : '../images/down-arrow.svg'
+
     const notLoggedIn = (
       <header className='header'>
         <NavLink to='/' className='header-title-navlink' ><h1 className='header-title'>Action Flix</h1></NavLink>
@@ -34,6 +36,7 @@ export class Header extends Component {
             <div className='dropdown-header'>
               <div className='dropdown-title'>
                 <h3 className='welcome-user' onClick={() => this.toggleList()}>Hello {this.props.name}</h3>
+                <img className='arrow-icon' src={arrowIcon} alt='down arrow' />
               </div>
             </div>
             { !this.state.listOpen ?  null : 
