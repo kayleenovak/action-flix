@@ -1,50 +1,57 @@
 {
- "name": "action-flix",
- "version": "0.1.0",
- "private": true,
- "jest": {
-   "collectCoverageFrom": ["src/actions/*.js", "src/cleaners/*.js", "src/components/**/*.js", "src/reducers/*Reducer.js", "src/thunks/*.js"]
- },
- "dependencies": {
-   "prop-types": "^15.6.2",
-   "react": "^16.6.3",
-   "react-dom": "^16.6.3",
-   "react-redux": "^6.0.0",
-   "react-router-dom": "^4.3.1",
-   "react-scripts": "2.1.1",
-   "redux": "^4.0.1",
-   "redux-devtools-extension": "^2.13.7",
-   "redux-thunk": "^2.3.0"
- },
- "scripts": {
-   "start": "react-scripts start",
-   "build": "react-scripts build",
-   "test": "react-scripts test",
-   "eject": "react-scripts eject",
-   "lint": "eslint src/**/*.js src/**/*.js"
- },
- "eslintConfig": {
-   "extends": "react-app"
- },
- "browserslist": [
-   ">0.2%",
-   "not dead",
-   "not ie <= 11",
-   "not op_mini all"
- ],
- "devDependencies": {
-   "enzyme": "^3.8.0",
-   "enzyme-adapter-react-16": "^1.7.1",
-   "eslint": "^5.10.0",
-   "eslint-config-standard": "^12.0.0",
-   "eslint-plugin-import": "^2.14.0",
-   "eslint-plugin-node": "^8.0.0",
-   "eslint-plugin-promise": "^4.0.1",
-   "eslint-plugin-react": "^7.11.1",
-   "eslint-plugin-standard": "^4.0.0"
- },
- "extends": [
-   "eslint:recommended",
-   "plugin:react/recommended"
- ]
+  "name": "action-flix",
+  "version": "0.1.0",
+  "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/actions/*.js",
+      "src/cleaners/*.js",
+      "src/components/**/*.js",
+      "src/reducers/*Reducer.js",
+      "src/thunks/*.js"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0",
+    "eslint": "5.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js src/**/*.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
 }

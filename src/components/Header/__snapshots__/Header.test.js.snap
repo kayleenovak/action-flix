@@ -34,13 +34,18 @@ ShallowWrapper {
           >
             <div
               className="dropdown-title"
+              onClick={[Function]}
             >
               <h3
                 className="welcome-user"
-                onClick={[Function]}
               >
                 Hello 
               </h3>
+              <img
+                alt="down arrow"
+                className="arrow-icon"
+                src="../images/down-arrow.svg"
+              />
             </div>
           </div>
         </div>,
@@ -72,13 +77,18 @@ ShallowWrapper {
             >
               <div
                 className="dropdown-title"
+                onClick={[Function]}
               >
                 <h3
                   className="welcome-user"
-                  onClick={[Function]}
                 >
                   Hello 
                 </h3>
+                <img
+                  alt="down arrow"
+                  className="arrow-icon"
+                  src="../images/down-arrow.svg"
+                />
               </div>
             </div>,
             null,
@@ -94,13 +104,18 @@ ShallowWrapper {
             "props": Object {
               "children": <div
                 className="dropdown-title"
+                onClick={[Function]}
               >
                 <h3
                   className="welcome-user"
-                  onClick={[Function]}
                 >
                   Hello 
                 </h3>
+                <img
+                  alt="down arrow"
+                  className="arrow-icon"
+                  src="../images/down-arrow.svg"
+                />
               </div>,
               "className": "dropdown-header",
             },
@@ -110,34 +125,55 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <h3
-                  className="welcome-user"
-                  onClick={[Function]}
-                >
-                  Hello 
-                </h3>,
+                "children": Array [
+                  <h3
+                    className="welcome-user"
+                  >
+                    Hello 
+                  </h3>,
+                  <img
+                    alt="down arrow"
+                    className="arrow-icon"
+                    src="../images/down-arrow.svg"
+                  />,
+                ],
                 "className": "dropdown-title",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Hello ",
+                      undefined,
+                    ],
+                    "className": "welcome-user",
+                  },
+                  "ref": null,
+                  "rendered": Array [
                     "Hello ",
                     undefined,
                   ],
-                  "className": "welcome-user",
-                  "onClick": [Function],
+                  "type": "h3",
                 },
-                "ref": null,
-                "rendered": Array [
-                  "Hello ",
-                  undefined,
-                ],
-                "type": "h3",
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "down arrow",
+                    "className": "arrow-icon",
+                    "src": "../images/down-arrow.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+              ],
               "type": "div",
             },
             "type": "div",
@@ -169,13 +205,18 @@ ShallowWrapper {
             >
               <div
                 className="dropdown-title"
+                onClick={[Function]}
               >
                 <h3
                   className="welcome-user"
-                  onClick={[Function]}
                 >
                   Hello 
                 </h3>
+                <img
+                  alt="down arrow"
+                  className="arrow-icon"
+                  src="../images/down-arrow.svg"
+                />
               </div>
             </div>
           </div>,
@@ -207,13 +248,18 @@ ShallowWrapper {
               >
                 <div
                   className="dropdown-title"
+                  onClick={[Function]}
                 >
                   <h3
                     className="welcome-user"
-                    onClick={[Function]}
                   >
                     Hello 
                   </h3>
+                  <img
+                    alt="down arrow"
+                    className="arrow-icon"
+                    src="../images/down-arrow.svg"
+                  />
                 </div>
               </div>,
               null,
@@ -229,13 +275,18 @@ ShallowWrapper {
               "props": Object {
                 "children": <div
                   className="dropdown-title"
+                  onClick={[Function]}
                 >
                   <h3
                     className="welcome-user"
-                    onClick={[Function]}
                   >
                     Hello 
                   </h3>
+                  <img
+                    alt="down arrow"
+                    className="arrow-icon"
+                    src="../images/down-arrow.svg"
+                  />
                 </div>,
                 "className": "dropdown-header",
               },
@@ -245,34 +296,55 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <h3
-                    className="welcome-user"
-                    onClick={[Function]}
-                  >
-                    Hello 
-                  </h3>,
+                  "children": Array [
+                    <h3
+                      className="welcome-user"
+                    >
+                      Hello 
+                    </h3>,
+                    <img
+                      alt="down arrow"
+                      className="arrow-icon"
+                      src="../images/down-arrow.svg"
+                    />,
+                  ],
                   "className": "dropdown-title",
+                  "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Hello ",
+                        undefined,
+                      ],
+                      "className": "welcome-user",
+                    },
+                    "ref": null,
+                    "rendered": Array [
                       "Hello ",
                       undefined,
                     ],
-                    "className": "welcome-user",
-                    "onClick": [Function],
+                    "type": "h3",
                   },
-                  "ref": null,
-                  "rendered": Array [
-                    "Hello ",
-                    undefined,
-                  ],
-                  "type": "h3",
-                },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "down arrow",
+                      "className": "arrow-icon",
+                      "src": "../images/down-arrow.svg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                ],
                 "type": "div",
               },
               "type": "div",
