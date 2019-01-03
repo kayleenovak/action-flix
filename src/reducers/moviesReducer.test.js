@@ -38,8 +38,8 @@ describe('moviesReducer', () => {
   })
 
   it('should update state with movies requested if our fetch request is successful', () => {
-    const mockMovies = [{title: 'Aquaman', favorite: true}]
-    const expected = [{title: 'Aquaman', favorite: false}]
+    const mockMovies = [{ title: 'Aquaman', favorite: true }]
+    const expected = [{ title: 'Aquaman', favorite: false }]
 
     const result = moviesReducer(mockMovies, actions.resetFavorites())
 
