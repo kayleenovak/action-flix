@@ -34,6 +34,9 @@ ShallowWrapper {
           path="/favorites"
           render={[Function]}
         />,
+        <Route
+          component={[Function]}
+        />,
       ],
       "className": "App",
     },
@@ -87,6 +90,17 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -112,6 +126,9 @@ ShallowWrapper {
             exact={true}
             path="/favorites"
             render={[Function]}
+          />,
+          <Route
+            component={[Function]}
           />,
         ],
         "className": "App",
@@ -161,6 +178,17 @@ ShallowWrapper {
             "exact": true,
             "path": "/favorites",
             "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
           },
           "ref": null,
           "rendered": null,

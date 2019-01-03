@@ -21,6 +21,7 @@ describe('Header', () => {
   it('should handle a click event', () => {
     wrapper.setState({listOpen: true})
     wrapper.find('.logout-btn').simulate('click')
+    
     expect(mockLogOut).toHaveBeenCalled
   })
 

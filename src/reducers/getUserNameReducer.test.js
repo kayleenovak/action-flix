@@ -1,7 +1,6 @@
 import { getUserNameReducer } from './getUserNameReducer'
 import * as actions from '../actions'
 
-
 describe('getUserNameReducer', () => {
   it('should return default state', () => {
     const expected = ''
