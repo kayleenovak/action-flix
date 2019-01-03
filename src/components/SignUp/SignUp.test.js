@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { SignUp, mapStateToProps, mapDispatchToProps } from './SignUp'
 import { getUser } from '../../thunks/signIn.js'
 import { createUser } from '../../thunks/createUser.js'
+import { hasErrored } from '../../actions'
 import { Redirect } from 'react-router-dom'
 
 describe('SignUp', () => {
@@ -274,6 +275,12 @@ describe('SignUp', () => {
       mappedProps.createNewUser(name, email, password)
 
       expect(mockDispatch).toHaveBeenCalledWith(expect.any(Function))
+    })
+
+    it('should call dispatch on errorAction with the correct params', () => {
+      mappedProps.errorAction(false)
+
+      expect(mockDispatch).toHaveBeenCalledWith(hasErrored(false))
     })
   })
 })
