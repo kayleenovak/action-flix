@@ -7,7 +7,7 @@
       "src/actions/*.js",
       "src/cleaners/*.js",
       "src/components/**/*.js",
-      "src/reducers/*.js",
+      "src/reducers/*Reducer.js",
       "src/thunks/*.js"
     ]
   },
@@ -20,8 +20,7 @@
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
-    "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,14 +40,7 @@
   ],
   "devDependencies": {
     "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
-    "eslint": "^5.10.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "enzyme-adapter-react-16": "^1.7.1"
   },
   "extends": [
     "eslint:recommended",

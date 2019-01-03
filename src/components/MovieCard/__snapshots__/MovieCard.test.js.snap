@@ -4,6 +4,9 @@ exports[`MovieCard should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MovieCard
+    addFavorite={[MockFunction]}
+    deleteFavorite={[MockFunction]}
+    movieId={1}
     movies={
       Array [
         Object {
@@ -14,7 +17,13 @@ ShallowWrapper {
         },
       ]
     }
+    overview="About this movie"
+    posterPath="www.thismovie.com"
+    releaseDate="12/12/18"
+    title="Aquaman"
+    toggleFavorite={[MockFunction]}
     userId={1}
+    voteAverage={7.5}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -33,6 +42,7 @@ ShallowWrapper {
         <img
           alt="movie poster"
           className="movie-img"
+          src="www.thismovie.com"
         />,
         <div
           className="movie-info-text"
@@ -40,9 +50,6 @@ ShallowWrapper {
           <div
             className="movie-icon-container"
           >
-            <p
-              className="movie-rating"
-            />
             <svg
               className="movie-rating-chart"
               viewBox="0 0 36 36"
@@ -55,14 +62,16 @@ ShallowWrapper {
               <path
                 className="circle"
                 d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                strokeDasharray="NaN, 100"
+                strokeDasharray="75, 100"
               />
               <text
                 className="movie-rating"
                 textAnchor="middle"
                 x="17"
                 y="22"
-              />
+              >
+                7.5
+              </text>
             </svg>
             <img
               alt="full popcorn"
@@ -73,13 +82,19 @@ ShallowWrapper {
           </div>
           <h3
             className="movie-title"
-          />
+          >
+            Aquaman
+          </h3>
           <p
             className="movie-release"
-          />
+          >
+            12/12/18
+          </p>
           <div
             className="movie-description"
-          />
+          >
+            About this movie
+          </div>
         </div>,
       ],
       "className": "movie-card",
@@ -93,7 +108,7 @@ ShallowWrapper {
         "props": Object {
           "alt": "movie poster",
           "className": "movie-img",
-          "src": undefined,
+          "src": "www.thismovie.com",
         },
         "ref": null,
         "rendered": null,
@@ -108,9 +123,6 @@ ShallowWrapper {
             <div
               className="movie-icon-container"
             >
-              <p
-                className="movie-rating"
-              />
               <svg
                 className="movie-rating-chart"
                 viewBox="0 0 36 36"
@@ -123,14 +135,16 @@ ShallowWrapper {
                 <path
                   className="circle"
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                  strokeDasharray="NaN, 100"
+                  strokeDasharray="75, 100"
                 />
                 <text
                   className="movie-rating"
                   textAnchor="middle"
                   x="17"
                   y="22"
-                />
+                >
+                  7.5
+                </text>
               </svg>
               <img
                 alt="full popcorn"
@@ -141,13 +155,19 @@ ShallowWrapper {
             </div>,
             <h3
               className="movie-title"
-            />,
+            >
+              Aquaman
+            </h3>,
             <p
               className="movie-release"
-            />,
+            >
+              12/12/18
+            </p>,
             <div
               className="movie-description"
-            />,
+            >
+              About this movie
+            </div>,
           ],
           "className": "movie-info-text",
         },
@@ -159,9 +179,6 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <p
-                  className="movie-rating"
-                />,
                 <svg
                   className="movie-rating-chart"
                   viewBox="0 0 36 36"
@@ -174,14 +191,16 @@ ShallowWrapper {
                   <path
                     className="circle"
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    strokeDasharray="NaN, 100"
+                    strokeDasharray="75, 100"
                   />
                   <text
                     className="movie-rating"
                     textAnchor="middle"
                     x="17"
                     y="22"
-                  />
+                  >
+                    7.5
+                  </text>
                 </svg>,
                 <img
                   alt="full popcorn"
@@ -199,18 +218,6 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": undefined,
-                  "className": "movie-rating",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "p",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
                   "children": Array [
                     <path
                       className="outline-circle"
@@ -220,14 +227,16 @@ ShallowWrapper {
                     <path
                       className="circle"
                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      strokeDasharray="NaN, 100"
+                      strokeDasharray="75, 100"
                     />,
                     <text
                       className="movie-rating"
                       textAnchor="middle"
                       x="17"
                       y="22"
-                    />,
+                    >
+                      7.5
+                    </text>,
                   ],
                   "className": "movie-rating-chart",
                   "viewBox": "0 0 36 36",
@@ -254,7 +263,7 @@ ShallowWrapper {
                     "props": Object {
                       "className": "circle",
                       "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
-                      "strokeDasharray": "NaN, 100",
+                      "strokeDasharray": "75, 100",
                     },
                     "ref": null,
                     "rendered": null,
@@ -265,14 +274,14 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": undefined,
+                      "children": 7.5,
                       "className": "movie-rating",
                       "textAnchor": "middle",
                       "x": "17",
                       "y": "22",
                     },
                     "ref": null,
-                    "rendered": null,
+                    "rendered": 7.5,
                     "type": "text",
                   },
                 ],
@@ -300,11 +309,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": undefined,
+              "children": "Aquaman",
               "className": "movie-title",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": "Aquaman",
             "type": "h3",
           },
           Object {
@@ -312,11 +321,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": undefined,
+              "children": "12/12/18",
               "className": "movie-release",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": "12/12/18",
             "type": "p",
           },
           Object {
@@ -324,11 +333,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": undefined,
+              "children": "About this movie",
               "className": "movie-description",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": "About this movie",
             "type": "div",
           },
         ],
@@ -347,6 +356,7 @@ ShallowWrapper {
           <img
             alt="movie poster"
             className="movie-img"
+            src="www.thismovie.com"
           />,
           <div
             className="movie-info-text"
@@ -354,9 +364,6 @@ ShallowWrapper {
             <div
               className="movie-icon-container"
             >
-              <p
-                className="movie-rating"
-              />
               <svg
                 className="movie-rating-chart"
                 viewBox="0 0 36 36"
@@ -369,14 +376,16 @@ ShallowWrapper {
                 <path
                   className="circle"
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                  strokeDasharray="NaN, 100"
+                  strokeDasharray="75, 100"
                 />
                 <text
                   className="movie-rating"
                   textAnchor="middle"
                   x="17"
                   y="22"
-                />
+                >
+                  7.5
+                </text>
               </svg>
               <img
                 alt="full popcorn"
@@ -387,13 +396,19 @@ ShallowWrapper {
             </div>
             <h3
               className="movie-title"
-            />
+            >
+              Aquaman
+            </h3>
             <p
               className="movie-release"
-            />
+            >
+              12/12/18
+            </p>
             <div
               className="movie-description"
-            />
+            >
+              About this movie
+            </div>
           </div>,
         ],
         "className": "movie-card",
@@ -407,7 +422,7 @@ ShallowWrapper {
           "props": Object {
             "alt": "movie poster",
             "className": "movie-img",
-            "src": undefined,
+            "src": "www.thismovie.com",
           },
           "ref": null,
           "rendered": null,
@@ -422,9 +437,6 @@ ShallowWrapper {
               <div
                 className="movie-icon-container"
               >
-                <p
-                  className="movie-rating"
-                />
                 <svg
                   className="movie-rating-chart"
                   viewBox="0 0 36 36"
@@ -437,14 +449,16 @@ ShallowWrapper {
                   <path
                     className="circle"
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    strokeDasharray="NaN, 100"
+                    strokeDasharray="75, 100"
                   />
                   <text
                     className="movie-rating"
                     textAnchor="middle"
                     x="17"
                     y="22"
-                  />
+                  >
+                    7.5
+                  </text>
                 </svg>
                 <img
                   alt="full popcorn"
@@ -455,13 +469,19 @@ ShallowWrapper {
               </div>,
               <h3
                 className="movie-title"
-              />,
+              >
+                Aquaman
+              </h3>,
               <p
                 className="movie-release"
-              />,
+              >
+                12/12/18
+              </p>,
               <div
                 className="movie-description"
-              />,
+              >
+                About this movie
+              </div>,
             ],
             "className": "movie-info-text",
           },
@@ -473,9 +493,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <p
-                    className="movie-rating"
-                  />,
                   <svg
                     className="movie-rating-chart"
                     viewBox="0 0 36 36"
@@ -488,14 +505,16 @@ ShallowWrapper {
                     <path
                       className="circle"
                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      strokeDasharray="NaN, 100"
+                      strokeDasharray="75, 100"
                     />
                     <text
                       className="movie-rating"
                       textAnchor="middle"
                       x="17"
                       y="22"
-                    />
+                    >
+                      7.5
+                    </text>
                   </svg>,
                   <img
                     alt="full popcorn"
@@ -513,18 +532,6 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": undefined,
-                    "className": "movie-rating",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "p",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
                     "children": Array [
                       <path
                         className="outline-circle"
@@ -534,14 +541,16 @@ ShallowWrapper {
                       <path
                         className="circle"
                         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        strokeDasharray="NaN, 100"
+                        strokeDasharray="75, 100"
                       />,
                       <text
                         className="movie-rating"
                         textAnchor="middle"
                         x="17"
                         y="22"
-                      />,
+                      >
+                        7.5
+                      </text>,
                     ],
                     "className": "movie-rating-chart",
                     "viewBox": "0 0 36 36",
@@ -568,7 +577,7 @@ ShallowWrapper {
                       "props": Object {
                         "className": "circle",
                         "d": "M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831",
-                        "strokeDasharray": "NaN, 100",
+                        "strokeDasharray": "75, 100",
                       },
                       "ref": null,
                       "rendered": null,
@@ -579,14 +588,14 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": undefined,
+                        "children": 7.5,
                         "className": "movie-rating",
                         "textAnchor": "middle",
                         "x": "17",
                         "y": "22",
                       },
                       "ref": null,
-                      "rendered": null,
+                      "rendered": 7.5,
                       "type": "text",
                     },
                   ],
@@ -614,11 +623,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": undefined,
+                "children": "Aquaman",
                 "className": "movie-title",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": "Aquaman",
               "type": "h3",
             },
             Object {
@@ -626,11 +635,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": undefined,
+                "children": "12/12/18",
                 "className": "movie-release",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": "12/12/18",
               "type": "p",
             },
             Object {
@@ -638,11 +647,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": undefined,
+                "children": "About this movie",
                 "className": "movie-description",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": "About this movie",
               "type": "div",
             },
           ],

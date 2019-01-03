@@ -1,5 +1,5 @@
 import { createUser } from '../createUser'
-import { isLoading, hasErrored, newUser } from '../../actions/index.js'
+import { isLoading, hasErrored, signIn } from '../../actions/index.js'
 
 
 describe('createUser', () => {
@@ -53,10 +53,10 @@ describe('createUser', () => {
       json: () => Promise.resolve(mockUser)
     }))
 
-    const thunk = createUser(mockUrl)
+    const thunk = createUser(mockUser.name, mockUser.email, mockUser.password)
 
     await thunk(mockDispatch)
 
-    expect(mockDispatch).toHaveBeenCalledWith(newUser(mockId))
+    expect(mockDispatch).toHaveBeenCalledWith(signIn(mockId, mockUser.name))
   })
 })

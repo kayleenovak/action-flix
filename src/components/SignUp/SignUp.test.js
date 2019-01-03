@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 
 describe('SignUp', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<SignUp />)
+    const wrapper = shallow(<SignUp user={0} hasErrored={ false } checkUserLogin={ jest.fn() } createNewUser={ jest.fn() } />)
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -17,7 +17,7 @@ describe('SignUp', () => {
     let mockEvent
 
     beforeEach(() => {
-      wrapper = shallow(<SignUp />)
+      wrapper = shallow(<SignUp user={0} hasErrored={ false } checkUserLogin={ jest.fn() } createNewUser={ jest.fn() } />)
       mockEvent = {
         target: {
           name: 'email',
@@ -74,7 +74,7 @@ describe('SignUp', () => {
         showSignIn: true,
         disableButton: false
       }
-      const wrapper = shallow(<SignUp />)
+      const wrapper = shallow(<SignUp user={0} hasErrored={ false } checkUserLogin={ jest.fn() } createNewUser={ jest.fn() } />)
 
       wrapper.setState(mockState)
       wrapper.instance().enableButtons()
@@ -97,7 +97,7 @@ describe('SignUp', () => {
         showSignIn: false,
         disableButton: false
       }
-      const wrapper = shallow(<SignUp />)
+      const wrapper = shallow(<SignUp user={0} hasErrored={ false } checkUserLogin={ jest.fn() } createNewUser={ jest.fn() } />)
 
       wrapper.setState(mockState)
       wrapper.instance().enableButtons()
@@ -121,7 +121,7 @@ describe('SignUp', () => {
       mockLogin = jest.fn()
       mockCreateUser = jest.fn()
       mockId = 1
-      wrapper = shallow(<SignUp hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      wrapper = shallow(<SignUp user={mockId} hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
     })
 
     it('should invoke handleSubmit on click of signIn button', () => {
@@ -173,7 +173,7 @@ describe('SignUp', () => {
       }
       const mockLogin = jest.fn()
       const mockCreateUser = jest.fn()
-      const wrapper = shallow(<SignUp hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      const wrapper = shallow(<SignUp user={userId} hasErrored={ false } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
       const mockState = {
         name: '',
         email: '',
@@ -208,16 +208,16 @@ describe('SignUp', () => {
       }
       mockLogin = jest.fn()
       mockCreateUser = jest.fn()
-      wrapper = shallow(<SignUp hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      wrapper = shallow(<SignUp user={userId} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
     })
 
     it('should render an h3 if this.props.hasErrored is true', () => {
 
-      expect(wrapper.find('h3').length).toBe(2)
+      expect(wrapper.find('h3').length).toBe(3)
     })
 
     it('should return a Redirect if this.props.user', () => {
-      const wrapper = shallow(<SignUp user='1' hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
+      const wrapper = shallow(<SignUp user={userId} hasErrored={ true } checkUserLogin={ mockLogin } createNewUser={ mockCreateUser } />)
 
       expect(wrapper.find(Redirect).length).toBe(1)
     })

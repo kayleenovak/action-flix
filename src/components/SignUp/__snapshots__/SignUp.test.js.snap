@@ -3,7 +3,12 @@
 exports[`SignUp should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SignUp />,
+  Symbol(enzyme.__unrendered__): <SignUp
+    checkUserLogin={[MockFunction]}
+    createNewUser={[MockFunction]}
+    hasErrored={false}
+    user={0}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

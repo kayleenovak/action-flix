@@ -9,17 +9,21 @@ describe('Header', () => {
   let mockLogOut
   beforeEach(() => {
     mockLogOut = jest.fn()
-    wrapper = shallow(<Header logUserOut={ mockLogOut }/>)
+    const mockUser = 1
+    wrapper = shallow(<Header logUserOut={ mockLogOut } user={mockUser} />)
   })
+
   it('should match the snapshot', () => {
     
     expect(wrapper).toMatchSnapshot();
   });
-  it('should handle a click event', () => {
-    wrapper.find('.logout-btn').simulate('click')
 
+  it('should handle a click event', () => {
+    wrapper.setState({listOpen: true})
+    wrapper.find('.logout-btn').simulate('click')
     expect(mockLogOut).toHaveBeenCalled
   })
+
   describe('mapDispatchToProps', () => {
     it('should call dispatch on logUserOut with the correct params', () => {
       const mockDispatch = jest.fn() 

@@ -19,8 +19,8 @@ describe('MovieContainer', () => {
     mockFetch = jest.fn()
     mockDispatch = jest.fn()
     mockMovies = [{name: 'Aquaman'}]
-    wrapper = shallow(<MovieContainer userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
     userId = 1
+    wrapper = shallow(<MovieContainer getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
   })
 
   it('should match the snapshot', () => {
@@ -40,12 +40,12 @@ describe('MovieContainer', () => {
   })
 
   it('should render actionMovies when webpage is at home location', () => {
-    wrapper = shallow(<MovieContainer location='/' userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
+    wrapper = shallow(<MovieContainer location='/' getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
     expect(wrapper.find('div.actionMovies')).toBeDefined()
   })
 
   it('should render favoriteMovies when webpage is at favorites location', () => {
-    wrapper = shallow(<MovieContainer location='/favorites' userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
+    wrapper = shallow(<MovieContainer location='/favorites' getFavorites={jest.fn()} userId={userId} movies={ mockMovies } isLoading={ false } hasErrored={ false } fetchMovies={ mockFetch }/>)
     expect(wrapper.find('div.favoriteMovies')).toBeDefined()
   })  
 

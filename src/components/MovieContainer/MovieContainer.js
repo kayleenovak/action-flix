@@ -46,7 +46,7 @@ render() {
 MovieContainer.propTypes = {
   fetchMovies: PropTypes.func.isRequired, 
   getFavorites: PropTypes.func.isRequired, 
-  userId: PropTypes.string.isRequired, 
+  userId: PropTypes.number.isRequired, 
   isLoading: PropTypes.bool.isRequired, 
   hasErrored: PropTypes.bool.isRequired, 
   movies: PropTypes.array.isRequired
