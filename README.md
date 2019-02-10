@@ -3,7 +3,7 @@
 ## Set Up
  - Make a directory for this project
  - cd into the directory
- - Clone down this repo, run `git clone https://github.com/Dhanciles/action-flix.git`
+ - Clone down this repo, run `git clone https://github.com/kayleenovak/action-flix.git`
  - Clone down the backend repo, run `git clone https://github.com/turingschool-examples/movie-tracker.git`
  - cd into the backend directory
  - Run `npm install` in your terminal
